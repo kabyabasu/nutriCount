@@ -33,5 +33,9 @@ class basicInfo:
         gender = st.selectbox("Insert Your Gender",["Male","Female"
 
         ])
+        pregnent = st.selectbox("Are You Pregnent",["No","Yes"
+
+        ])
+        breastfeed = st.selectbox("Are You breast Fedding",["No","Yes"])
         current_weights = st.slider("What is your weight n KG",40,170)
         return name, occupation,gender
