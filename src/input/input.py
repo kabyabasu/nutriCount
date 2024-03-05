@@ -20,4 +20,15 @@ class basicInfo:
                 "Retired Athlete",
             ],
         )
+
+        Duration_of_WorkDay = st.selectbox(
+            "How much time you spend on work",
+            [
+                "Light (Daily Average of upto 4 Hours)",
+                "Moderate (Upto 8 Hours)",
+                "Heavy (10+ Hours)",
+                "Walking Zombie (12+ Hours)",
+            ],
+        )
+        
         return name, occupation
