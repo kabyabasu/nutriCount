@@ -30,5 +30,8 @@ class basicInfo:
                 "Walking Zombie (12+ Hours)",
             ],
         )
-        
-        return name, occupation
+        gender = st.selectbox("Insert Your Gender",["Male","Female"
+
+        ])
+        current_weights = st.slider("What is your weight n KG",40,170)
+        return name, occupation,gender
