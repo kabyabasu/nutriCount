@@ -8,7 +8,7 @@ add_page_title()
 
 
 def app():
-
+    form_1 = {}
     with st.form("basic_form"):
         # Define UI elements and use them to update session_state
         name = st.text_input("What is your Name?", value=st.session_state.get('name', ''))
@@ -44,9 +44,13 @@ def app():
 
         # No need to manually set session_state['weight'], Streamlit does it automatically
         submit_button = st.form_submit_button("Submit")
+        for key in st.session_state:
+            form_1[key] = st.session_state[key]
+
 
         return name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights
 
 
-name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights = app()
+name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights,form_1 = app()
+st.write(form_1)
 
