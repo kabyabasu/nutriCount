@@ -34,9 +34,6 @@ def app():
     if 'weight' not in st.session_state:
         st.session_state['weight'] = 70
     current_weights = st.slider("What is your weight n KG", 40, 170,key="weight")
-    c_weigh = st.session_state["weight"]
-    return name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights,c_weigh
+    return name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights
 
 name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights,c_weigh = app()
-st.write(c_weigh)
-st.write(current_weights)
