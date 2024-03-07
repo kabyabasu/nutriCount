@@ -23,9 +23,9 @@ from pathlib import Path
 "Streamlit script:"
 
 with st.echo("below"):
-    from st_pages import _show_pages_from_config
+    from st_pages import show_pages_from_config
 
-    _show_pages_from_config("pages_section.toml")
+    show_pages_from_config("pages_section.toml")
 
 
 with st.expander("Show documentation"):
