@@ -54,5 +54,5 @@ def app():
 
 
 name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights,form_1 = app()
-st.write(form_1)
+st.write(form_1["FormSubmitter:basic_form-Submit"])
 
