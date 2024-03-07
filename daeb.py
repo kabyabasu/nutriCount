@@ -34,14 +34,46 @@ def app():
     ci = st.number_input(
         "How Many Cups of Coffee you drink per day", min_value=0, max_value=10
     )
-    water_intake = st.number_input(
-        "How many Liters of Water you drink in a day", 1, 6
+    water_intake = st.number_input("How many Liters of Water you drink in a day", 1, 6)
+    daily_calories = st.slider(
+        "What is your daily Cal Consumption (best guess)", 500, 5000, value=3500
     )
-    daily_calories = st.slider("What is your daily Cal Consumption (best guess)",500,5000,value=3500)
-    dails_carbs = st.slider("What % of your total calories from Carb consumption (best guess)",0,100,value=70)
-    dails_fat = st.slider("What % of your total calories from Fat consumption (best guess)",0,100,value=15)
-    dails_protein = st.slider("What % of your total calories from Protein consumption (best guess)",0,100,value=15)
-    allergens_1 = st.multiselect("Select the item/items you are allergic", ["None","Milk", "Egg", "Fish","Shellfish","Peanuts","Wheat","Soy"])
+    dails_carbs = st.slider(
+        "What % of your total calories from Carb consumption (best guess)",
+        0,
+        100,
+        value=70,
+    )
+    dails_fat = st.slider(
+        "What % of your total calories from Fat consumption (best guess)",
+        0,
+        100,
+        value=15,
+    )
+    dails_protein = st.slider(
+        "What % of your total calories from Protein consumption (best guess)",
+        0,
+        100,
+        value=15,
+    )
+    allergens_1 = st.multiselect(
+        "Choose the food item or items to which you are allergic",
+        ["None", "Milk", "Egg", "Fish", "Shellfish", "Peanuts", "Wheat", "Soy"],
+    )
+    diet_observation = st.multiselect(
+        "Choose the item or items that align with your dietary Observation ",
+        [
+            "None",
+            "Primarily Carbs",
+            "High Sugar Consumption",
+            "Lack of Protein",
+            "Erratic Meal Times",
+            "Insufficient Balance of Macros",
+            "Balanced Meals",
+            "Unnecessary supplements",
+            "High Fat Intake",
+        ],
+    )
 
 
 app()
