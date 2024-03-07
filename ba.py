@@ -88,6 +88,47 @@ def app():
         ],
         default="No Tingling or Numbness",
     )
+       weekness = st.selectbox(
+        "Do you have weekness in the body",
+        [
+            "No",
+            "Yes",
+        ],
+    )
+    weekness_intensity = st.selectbox(
+        "What is the intensity of weekness in the body",
+        [
+            "No weekness",
+            "Mild (It doesn't bother me much but I feel it)",
+            "Moderate  (Feel it everday but I manage)",
+            "Severe (Daily activities are affected)",
+            "Life has no meaning (Need immediate relief)",
+        ],
+    )
+    weekness_location = st.multiselect(
+        "Where do you have weekness in the body",
+        [
+            "No weekness",
+            "Neck",
+            "Shoulder",
+            "Arm",
+            "Forearm",
+            "Elbow",
+            "Wrist + Hand",
+            "Upper Back",
+            "Lower Back",
+            "Hip & Thigh",
+            "Knee",
+            "Shin",
+            "Ankle",
+            "Foot",
+            "Chest",
+            "Groin",
+            "Stomach",
+        ],
+        default="No weekness",
+    )
+    
     return (
         pain,
         pain_intensity,
@@ -95,6 +136,10 @@ def app():
         tingling,
         tingling_intensity,
         tingling_location,
+        weekness,
+        weekness_intensity,
+        weekness_location
+
     )
 
 
