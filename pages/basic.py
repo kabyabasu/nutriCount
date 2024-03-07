@@ -31,7 +31,7 @@ def app():
     gender = st.selectbox("Insert Your Gender", ["Male", "Female"])
     pregnent = st.selectbox("Are You Pregnent", ["No", "Yes"])
     breastfeed = st.selectbox("Are You breast Fedding", ["No", "Yes"])
-    current_weights = st.slider("What is your weight n KG", 40, 170)
+    current_weights = st.slider("What is your weight n KG", 40, 170,key="current_weight")
     return name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights
 
 name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights = app()
