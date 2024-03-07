@@ -8,10 +8,8 @@ def app():
 
     st.write(
 
-        "The weight is"
+        st.session_state
     )
-    print(alsh.printa_data())
-
 
  
 app()
