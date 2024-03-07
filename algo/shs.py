@@ -1,4 +1,4 @@
 import streamlit as st
-from pages.basic import current_weights
+from pages.basic import c_weigh
 
-new_weight = st.session_state.current_weight *2
+new_weight = c_weigh *2
