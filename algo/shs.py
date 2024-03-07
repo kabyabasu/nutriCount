@@ -1,5 +1,4 @@
 import streamlit as st
-from pages.basic import form_1
+from pages.basic import current_weight
 
-def call_back():
-    new_weight = st.session_state.weight
+new_weigh = current_weight * 1000
