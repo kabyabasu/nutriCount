@@ -90,4 +90,4 @@ def app():
 
 current_weight = app()
 # Optionally display the current weight
-st.write(f"Your current weight is: {st.session_state["weight"]} kg")
+st.write(f"Your current weight is: {st.session_state.weight} kg")
