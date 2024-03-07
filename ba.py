@@ -88,7 +88,7 @@ def app():
         ],
         default="No Tingling or Numbness",
     )
-       weekness = st.selectbox(
+    weekness = st.selectbox(
         "Do you have weekness in the body",
         [
             "No",
@@ -128,7 +128,7 @@ def app():
         ],
         default="No weekness",
     )
-    
+
     return (
         pain,
         pain_intensity,
