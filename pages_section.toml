@@ -16,7 +16,7 @@ icon = "✏️"
 [[pages]]
 path = "./daeb.py"
 name = "Diet and Eating Habits"
-icon = "croissant:"
+icon = "🥐"
 
 [[pages]]
 path = "Profile.py"
