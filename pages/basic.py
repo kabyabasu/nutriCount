@@ -36,4 +36,5 @@ def app():
     current_weights = st.slider("What is your weight n KG", 40, 170,key="weight")
     return name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights
 
-name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights,c_weigh = app()
+name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights = app()
+st.write(current_weights)
