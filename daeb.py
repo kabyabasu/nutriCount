@@ -35,7 +35,7 @@ def app():
         "How Many Cups of Coffee you drink per day", min_value=0, max_value=10
     )
     water_intake = st.number_input(
-        "How many Liters of Water you drink in a day", 0.5, 5.5
+        "How many Liters of Water you drink in a day", 1, 6
     )
 
 
