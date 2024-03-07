@@ -1,0 +1,20 @@
+[[pages]]
+name = "Profile Settings"
+icon = ":Settings:"
+is_section = true
+
+[[pages]]
+path = "basic.py"
+name = "Basic Information"
+icon = "📖"
+
+[[pages]]
+path = "lifestyleInformation.py.py"
+name = "life Style Information"
+icon = "✏️"
+
+[[pages]]
+path = "Profile.py"
+name = "Profile"
+icon = "🧰"
+in_section = false
