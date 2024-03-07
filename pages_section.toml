@@ -29,6 +29,12 @@ name = "lifeStyle Conditionn"
 icon = "⚕️"
 
 [[pages]]
+path = "./goal.py"
+name = "Your Goal"
+icon = ""🛫""
+
+
+[[pages]]
 path = "Profile.py"
 name = "Profile"
 icon = "🧰"
