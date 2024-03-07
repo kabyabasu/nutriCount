@@ -7,7 +7,8 @@ add_page_title()
 def save_data():
     st.session_state["_weight"] = st.session_state["weight"]
     new_weight = st.session_state['weight']
-
+def get_value(key):
+            st.session_state["weight"] = st.session_state[_weight]
 
 
 def app():
@@ -44,6 +45,10 @@ def app():
         breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"], index=0 if st.session_state.get('breastfeeding', 'No') == 'No' else 1)
         # For the slider, just create it without manually setting session_state
         st.session_state["weight"] = st.session_state["_weight"]
+
+        
+
+        get_value("_weight")
         current_weights = st.slider("What is your weight in KG", 40, 170, key='weight',on_change=save_data)
         
 
