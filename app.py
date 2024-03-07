@@ -49,8 +49,8 @@ add_page_title() # By default this also adds indentation
 # should be
 show_pages(
     [
-        Page("basic.py", "Basic Information", "🏠"),
-        Page("lifestyleInformation.py", "life Style Information", ":books:"),
+        Page("basic", "Basic Information", "🏠"),
+        Page("lifestyleInformation", "life Style Information", ":books:"),
         #Section("My section", icon="🎈️"),
         # # Pages after a section will be indented
         # Page("Another page", icon="💪"),
