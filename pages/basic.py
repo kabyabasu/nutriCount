@@ -50,4 +50,4 @@ def app():
 
 name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights = app()
 
-st.write(current_weights)
+wt = current_weights
