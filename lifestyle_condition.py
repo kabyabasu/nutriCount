@@ -23,5 +23,6 @@ def app():
         ],
         default="None",
     )
-    mc_add = st.text_input("If you have any medical condtion that is not mentioned above please give details",max_chars=130,disabled=True)
+    mc_add = st.text_input("If you have any medical condtion that is not mentioned above please give details",max_chars=130,disabled=False,placeholder="None")
+
 app()
