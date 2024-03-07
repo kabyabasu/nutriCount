@@ -8,9 +8,7 @@ def app():
     st.write(
 
         new_value = call_back()
-        new_value
-
-    )
+        )
 
  
 app()
