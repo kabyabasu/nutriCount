@@ -38,6 +38,9 @@ def app():
         "How many Liters of Water you drink in a day", 1, 6
     )
     daily_calories = st.slider("What is your daily Cal Consumption (best guess)",500,5000)
+    dails_carbs = st.slider("What % of your total calories from Carb consumption (best guess)"0,100)
+    dails_fat = st.slider("What % of your total calories from Fat consumption (best guess)"0,100)
+    dails_protein = st.slider("What % of your total calories from Protein consumption (best guess)"0,100)
 
 
 app()
