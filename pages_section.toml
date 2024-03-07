@@ -19,6 +19,11 @@ name = "Diet and Eating Habits"
 icon = "🥐"
 
 [[pages]]
+path = "./ba.py"
+name = "Body Assessment"
+icon = "🎰"
+
+[[pages]]
 path = "Profile.py"
 name = "Profile"
 icon = "🧰"
