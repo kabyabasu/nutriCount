@@ -1,15 +1,15 @@
 [[pages]]
 name = "Profile Settings"
-icon = ":Settings:"
+icon = ""
 is_section = true
 
 [[pages]]
-path = "basic.py"
+path = "./basic.py"
 name = "Basic Information"
 icon = "📖"
 
 [[pages]]
-path = "lifestyleInformation.py.py"
+path = "./lifestyleInformation.py"
 name = "life Style Information"
 icon = "✏️"
 
