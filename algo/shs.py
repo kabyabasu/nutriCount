@@ -1,5 +1,4 @@
 import streamlit as st
-import pages.basic as pb
+from pages.basic import current_weights
 
-def printa_data():
-    print (pb.current_weights)
+new_weight = current_weights *2
