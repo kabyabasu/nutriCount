@@ -39,3 +39,4 @@ def app():
 
 name,occupation,Duration_of_WorkDay,gender,pregnent,breastfeed,current_weights,c_weigh = app()
 st.write(c_weigh)
+st.write(current_weights)
