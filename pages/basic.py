@@ -68,28 +68,26 @@
 
 import streamlit as st
 
-# Ensure '_weight' is initialized in session_state
+# Initialize '_weight' if not in session_state
 if "_weight" not in st.session_state:
-    st.session_state["_weight"] = 70  # Assuming 70 as a default starting weight
-
-def save_data():
-    # Save current weight to '_weight' in session_state
-    st.session_state["_weight"] = st.session_state["weight"]
+    st.session_state["_weight"] = 70  # Default weight
 
 def app():
     with st.form("basic_form"):
-        # Define UI elements here...
+        # Other form elements...
         
-        # Correct usage of session_state for slider's default value
-        current_weight = st.slider("What is your weight in KG", 40, 170, value=st.session_state.get("_weight", 70), key='weight', on_change=save_data)
-        
+        # Use the slider without an on_change callback
+        current_weight = st.slider("What is your weight in KG", 40, 170, value=st.session_state.get("_weight", 70), key='weight')
+
         submit_button = st.form_submit_button("Submit")
-        
-        # Rest of your form handling...
-        
+        if submit_button:
+            # Perform actions after submission, e.g., saving the weight
+            st.session_state["_weight"] = st.session_state["weight"]
+            # Additional actions based on form input...
+
+        # Return values are not impacted by the removal of on_change
         return current_weight
 
 current_weight = app()
+# Optionally display the current weight
 st.write(f"Your current weight is: {current_weight}kg")
-
-
