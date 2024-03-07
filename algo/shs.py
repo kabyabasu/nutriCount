@@ -1,4 +1,4 @@
 import streamlit as st
-from pages.basic import wt
+from pages.basic import gender
 
-new_weight = wt * 2
+new_weight = gender
