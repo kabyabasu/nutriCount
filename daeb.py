@@ -17,6 +17,6 @@ def app():
             "Gluten Free",
         ],
     )
-    cnom = st.number_input("How many meals you eat per day"min_value=1,max_value=4)
+    cnom = st.number_input("How many meals you eat per day",min_value=1,max_value=4)
 
 app()
