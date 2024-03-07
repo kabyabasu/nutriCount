@@ -44,7 +44,7 @@ def app():
         breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"], index=0 if st.session_state.get('breastfeeding', 'No') == 'No' else 1)
         # For the slider, just create it without manually setting session_state
         st.session_state["weight"] = st.session_state["_weight"]
-        current_weights = st.slider("What is your weight in KG", 40, 170, key='weight')
+        current_weights = st.slider("What is your weight in KG", 40, 170, key='weight',on_change=save_data)
         
 
         # No need to manually set session_state['weight'], Streamlit does it automatically
@@ -59,5 +59,5 @@ def app():
 
 
 name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights = app()
-st.write["_weight"]
+#st.write["_weight"]
 
