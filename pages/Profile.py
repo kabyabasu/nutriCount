@@ -8,7 +8,7 @@ def app():
 
     st.write(
 
-        new_weight
+        new_weight,
         new_weight_2
     )
 
