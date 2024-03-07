@@ -14,6 +14,11 @@ name = "life Style Information"
 icon = "✏️"
 
 [[pages]]
+path = "./daeb.py"
+name = "Diet and Eating Habits"
+icon = "croissant:"
+
+[[pages]]
 path = "Profile.py"
 name = "Profile"
 icon = "🧰"
