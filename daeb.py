@@ -37,6 +37,7 @@ def app():
     water_intake = st.number_input(
         "How many Liters of Water you drink in a day", 1, 6
     )
+    daily_calories = st.select_slider("What is your Daily Cal Consumption (best guess)"500,5000)
 
 
 app()
