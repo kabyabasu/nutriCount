@@ -4,37 +4,37 @@ icon = ""
 is_section = true
 
 [[pages]]
-path = "./basic.py"
+path = ".pages/basic.py"
 name = "Basic Information"
 icon = "📖"
 
 [[pages]]
-path = "./daeb.py"
+path = ".pages/daeb.py"
 name = "Diet and Eating Habits"
 icon = "🥐"
 
 [[pages]]
-path = "./ba.py"
+path = ".pages/ba.py"
 name = "Body Assessment"
 icon = "🎰"
 
 [[pages]]
-path = "./lifestyleInformation.py"
+path = ".pages/lifestyleInformation.py"
 name = "life Style Information"
 icon = "✏️"
 
 [[pages]]
-path = "./lifestyle_condition.py"
+path = ".pages/lifestyle_condition.py"
 name = "lifeStyle Conditionn"
 icon = "⚕️"
 
 [[pages]]
-path = "./goal.py"
+path = ".pages/goal.py"
 name = "Your Goal"
 icon = "⚕️"
 
 [[pages]]
-path = "Profile.py"
+path = "./pages/Profile.py"
 name = "Profile"
 icon = "🧰"
 in_section = false
