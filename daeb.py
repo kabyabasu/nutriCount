@@ -18,5 +18,6 @@ def app():
         ],
     )
     cnom = st.number_input("How many meals you eat per day",min_value=1,max_value=4)
+    cnom_detail = st.text_input("What are these meals",max_chars=130,help="breakfast")
 
 app()
