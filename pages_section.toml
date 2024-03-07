@@ -9,11 +9,6 @@ name = "Basic Information"
 icon = "📖"
 
 [[pages]]
-path = "./lifestyleInformation.py"
-name = "life Style Information"
-icon = "✏️"
-
-[[pages]]
 path = "./daeb.py"
 name = "Diet and Eating Habits"
 icon = "🥐"
@@ -22,6 +17,16 @@ icon = "🥐"
 path = "./ba.py"
 name = "Body Assessment"
 icon = "🎰"
+
+[[pages]]
+path = "./lifestyleInformation.py"
+name = "life Style Information"
+icon = "✏️"
+
+[[pages]]
+path = "./lifestyle_condition.py"
+name = "lifeStyle Conditionn"
+icon = "✏️"
 
 [[pages]]
 path = "Profile.py"
