@@ -56,7 +56,7 @@ def app():
         100,
         value=15,
     )
-    allergens_1 = st.multiselect(
+    allergens = st.multiselect(
         "Choose the food item or items to which you are allergic",
         ["None", "Milk", "Egg", "Fish", "Shellfish", "Peanuts", "Wheat", "Soy"],
     )
@@ -74,6 +74,7 @@ def app():
             "High Fat Intake",
         ],
     )
+    return diet_style,cnom,cnom_detail,first_major_meal,ci,water_intake,daily_calories,dails_carbs,dails_fat,dails_protein,allergens,diet_observation
 
 
 app()

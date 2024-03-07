@@ -39,4 +39,6 @@ def app():
     )
     supply = st.selectbox("Do you take any health supplements", ["Yes", "No"])
 
+    return current_lifeStyle,Current_Fitness_Level,smoker,alcohol,otie,supply
+
 app()
