@@ -3,29 +3,14 @@ from st_pages import add_page_title
 
 add_page_title()
 
-def app():
-    import streamlit as st
+
+
+
 
 def app():
-    # Initialize session_state for all variables if not already done
-    if 'name' not in st.session_state:
-        st.session_state['name'] = ""
-    if 'occupation' not in st.session_state:
-        st.session_state['occupation'] = ""
-    if 'duration_of_workday' not in st.session_state:
-        st.session_state['duration_of_workday'] = ""
-    if 'gender' not in st.session_state:
-        st.session_state['gender'] = ""
-    if 'pregnant' not in st.session_state:
-        st.session_state['pregnant'] = "No"
-    if 'breastfeeding' not in st.session_state:
-        st.session_state['breastfeeding'] = "No"
-    if 'weight' not in st.session_state:
-        st.session_state['weight'] = 70  # Assuming a default value
-
-    # Define UI elements and bind them to session_state
-    st.session_state['name'] = st.text_input("What is your Name?", value=st.session_state['name'])
-    st.session_state['occupation'] = st.selectbox(
+    # Define UI elements and use them to update session_state
+    name = st.text_input("What is your Name?", value=st.session_state.get('name', ''))
+    occupation = st.selectbox(
         "Pick your occupation",
         [
             "Homebody (Housepersons/maids/Stay at home parents)",
@@ -37,9 +22,9 @@ def app():
             "Retired Field Worker",
             "Retired Athlete",
         ],
-        index=0 if st.session_state['occupation'] == "" else None,  # Keep selection if already made
+        index=st.session_state.get('occupation', 0)
     )
-    st.session_state['duration_of_workday'] = st.selectbox(
+    duration_of_workday = st.selectbox(
         "How much time you spend on work",
         [
             "Light (Daily Average of up to 4 Hours)",
@@ -47,23 +32,18 @@ def app():
             "Heavy (10+ Hours)",
             "Walking Zombie (12+ Hours)",
         ],
-        index=0 if st.session_state['duration_of_workday'] == "" else None,
+        index=st.session_state.get('duration_of_workday', 0)
     )
-    st.session_state['gender'] = st.selectbox("Insert Your Gender", ["Male", "Female"], index=0 if st.session_state['gender'] == "" else None)
-    st.session_state['pregnant'] = st.selectbox("Are You Pregnant", ["No", "Yes"], index=0 if st.session_state['pregnant'] == "No" else 1)
-    st.session_state['breastfeeding'] = st.selectbox("Are You Breastfeeding", ["No", "Yes"], index=0 if st.session_state['breastfeeding'] == "No" else 1)
-    st.session_state['weight'] = st.slider("What is your weight in KG", 40, 170, key='weight')
+    gender = st.selectbox("Insert Your Gender", ["Male", "Female"], index=st.session_state.get('gender', 0))
+    pregnant = st.selectbox("Are You Pregnant", ["No", "Yes"], index=0 if st.session_state.get('pregnant', 'No') == 'No' else 1)
+    breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"], index=0 if st.session_state.get('breastfeeding', 'No') == 'No' else 1)
+    # For the slider, just create it without manually setting session_state
+    current_weights = st.slider("What is your weight in KG", 40, 170, key='weight')
 
-    # Directly use the session_state values
-    name = st.session_state['name']
-    occupation = st.session_state['occupation']
-    duration_of_workday = st.session_state['duration_of_workday']
-    gender = st.session_state['gender']
-    pregnant = st.session_state['pregnant']
-    breastfeeding = st.session_state['breastfeeding']
-    current_weights = st.session_state['weight']
+    # No need to manually set session_state['weight'], Streamlit does it automatically
 
     return name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights
+
 
 name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights = app()
 
