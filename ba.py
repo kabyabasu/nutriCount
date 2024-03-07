@@ -8,8 +8,8 @@ def app():
     pain = st.selectbox(
         "Do you have Pain in the body",
         [
-            "Yes",
             "No",
+            "Yes",
         ],
     )
     pain_intensity = st.selectbox(
@@ -43,6 +43,7 @@ def app():
             "Groin",
             "Stomach",
         ],
+        default="No Pain",
     )
 
 
