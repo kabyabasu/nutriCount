@@ -8,7 +8,7 @@ def app():
 
     st.write(
 
-        new_weight
+        st.session_state.get('current_weights', 80) * 2
     )
 
  
