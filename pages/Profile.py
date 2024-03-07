@@ -1,11 +1,17 @@
 import streamlit as st
 from st_pages import add_page_title
+import algo.shs as alsh
 
 add_page_title()
 
 def app():
 
-    Test = st.selectbox(
-        "Are you Ready to Incorporate Exercise in your Daily routine", ["Yes", "No"]
+    st.write(
+
+        "The weight is"
     )
+    alsh.pb
+
+
  
+app()
