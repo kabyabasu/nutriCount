@@ -4,7 +4,8 @@ from st_pages import add_page_title
 
 add_page_title()
 
-def call_back():
+def save_data():
+    st.session_state["_weight"] = st.session_state["weight"]
     new_weight = st.session_state['weight']
 
 
@@ -42,6 +43,7 @@ def app():
         pregnant = st.selectbox("Are You Pregnant", ["No", "Yes"], index=0 if st.session_state.get('pregnant', 'No') == 'No' else 1)
         breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"], index=0 if st.session_state.get('breastfeeding', 'No') == 'No' else 1)
         # For the slider, just create it without manually setting session_state
+        st.session_state["weight"] = st.session_state["_weight"]
         current_weights = st.slider("What is your weight in KG", 40, 170, key='weight')
         
 
@@ -57,5 +59,5 @@ def app():
 
 
 name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights = app()
-#st.write(form_1)
+st.write["_weight"]
 
