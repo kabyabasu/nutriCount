@@ -16,9 +16,9 @@ from pathlib import Path
 
 
 
-"Contents of `pages_sections.toml`"
+#"Contents of `pages_sections.toml`"
 
-st.code(Path("pages_section.toml").read_text(), language="toml")
+#st.code(Path("pages_section.toml").read_text(), language="toml")
 
 "Streamlit script:"
 
