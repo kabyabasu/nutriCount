@@ -128,7 +128,46 @@ def app():
         ],
         default="No weekness",
     )
-
+    tightness = st.selectbox(
+        "Do you have Tightness or Stiffness in muscles or joints in the body",
+        [
+            "No",
+            "Yes",
+        ],
+    )
+    tightness_intensity = st.selectbox(
+        "What is the intensity of Tightness or Stiffness in the body",
+        [
+            "No Tightness or Stiffness",
+            "Mild (It doesn't bother me much but I feel it)",
+            "Moderate  (Feel it everday but I manage)",
+            "Severe (Daily activities are affected)",
+            "Life has no meaning (Need immediate relief)",
+        ],
+    )
+    tightness_location = st.multiselect(
+        "Where do you have Tightness or Stiffness in the body",
+        [
+            "No Tightness or Stiffness",
+            "Neck",
+            "Shoulder",
+            "Arm",
+            "Forearm",
+            "Elbow",
+            "Wrist + Hand",
+            "Upper Back",
+            "Lower Back",
+            "Hip & Thigh",
+            "Knee",
+            "Shin",
+            "Ankle",
+            "Foot",
+            "Chest",
+            "Groin",
+            "Stomach",
+        ],
+        default="No Tightness or Stiffness",
+    )
     return (
         pain,
         pain_intensity,
@@ -138,7 +177,10 @@ def app():
         tingling_location,
         weekness,
         weekness_intensity,
-        weekness_location
+        weekness_location,
+        tightness,
+        tightness_intensity,
+        tightness_location
 
     )
 
