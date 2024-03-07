@@ -31,7 +31,7 @@ icon = "⚕️"
 [[pages]]
 path = "./goal.py"
 name = "Your Goal"
-icon = ""🛫""
+icon = """"
 
 
 [[pages]]
