@@ -12,5 +12,38 @@ def app():
             "No",
         ],
     )
+    pain_intensity = st.selectbox(
+        "What is the intensity of Pain in the body",
+        [
+            "No Pain",
+            "Mild (It doesn't bother me much but I feel it)",
+            "Moderate  (Feel it everday but I manage)",
+            "Severe (Daily activities are affected)",
+            "Life has no meaning (Need immediate relief)",
+        ],
+    )
+    pain_location = st.multiselect(
+        "Where do you have Pain in the body",
+        [
+            "No Pain",
+            "Neck",
+            "Shoulder",
+            "Arm",
+            "Forearm",
+            "Elbow",
+            "Wrist + Hand",
+            "Upper Back",
+            "Lower Back",
+            "Hip & Thigh",
+            "Knee",
+            "Shin",
+            "Ankle",
+            "Foot",
+            "Chest",
+            "Groin",
+            "Stomach",
+        ],
+    )
+
 
 app()
