@@ -10,7 +10,7 @@ def app():
 
         "The weight is"
     )
-    alsh.pb
+    alsh.printa_data
 
 
  
