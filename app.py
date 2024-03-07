@@ -28,18 +28,18 @@ with st.echo("below"):
     show_pages_from_config("pages_section.toml")
 
 
-# with st.expander("Show documentation"):
-#     from st_pages import add_indentation
+with st.expander("Show documentation"):
+    from st_pages import add_indentation
 
-#     st.help(show_pages)
+    st.help(show_pages)
 
-#     st.help(Page)
+    st.help(Page)
 
-#     st.help(add_page_title)
+    st.help(add_page_title)
 
-#     st.help(Section)
+    st.help(Section)
 
-#     st.help(add_indentation)
+    st.help(add_indentation)
 
 # from st_pages import Page, Section, show_pages,add_page_title
 
