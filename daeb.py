@@ -41,6 +41,7 @@ def app():
     dails_carbs = st.slider("What % of your total calories from Carb consumption (best guess)",0,100,value=70)
     dails_fat = st.slider("What % of your total calories from Fat consumption (best guess)",0,100,value=15)
     dails_protein = st.slider("What % of your total calories from Protein consumption (best guess)",0,100,value=15)
+    allergens_1 = st.multiselect("Select the item/items you are allergic", ["None","Milk", "Egg", "Fish","Shellfish","Peanuts","Wheat","Soy"])
 
 
 app()
