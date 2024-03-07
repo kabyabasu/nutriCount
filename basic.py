@@ -33,3 +33,4 @@ def app():
     breastfeed = st.selectbox("Are You breast Fedding", ["No", "Yes"])
     current_weights = st.slider("What is your weight n KG", 40, 170)
     return name, occupation, gender
+app()
