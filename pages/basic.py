@@ -1,5 +1,6 @@
 import streamlit as st
 from st_pages import add_page_title
+from algo.shs import call_back
 
 add_page_title()
 
@@ -40,7 +41,8 @@ def app():
         pregnant = st.selectbox("Are You Pregnant", ["No", "Yes"], index=0 if st.session_state.get('pregnant', 'No') == 'No' else 1)
         breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"], index=0 if st.session_state.get('breastfeeding', 'No') == 'No' else 1)
         # For the slider, just create it without manually setting session_state
-        current_weights = st.slider("What is your weight in KG", 40, 170, key='weight')
+        current_weights = st.slider("What is your weight in KG", 40, 170, key='weight',on_change=call_back)
+        
 
         # No need to manually set session_state['weight'], Streamlit does it automatically
         submit_button = st.form_submit_button("Submit")
