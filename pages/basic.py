@@ -44,10 +44,10 @@ def app():
 
         # No need to manually set session_state['weight'], Streamlit does it automatically
         submit_button = st.form_submit_button("Submit")
-        #if st.session_state["FormSubmitter:basic_form-Submit"]:
+        if st.session_state["FormSubmitter:basic_form-Submit"] == True:
 
-        for key in st.session_state:
-            form_1[key] = st.session_state[key]
+            for key in st.session_state:
+                form_1[key] = st.session_state[key]
 
 
         return name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights,form_1
