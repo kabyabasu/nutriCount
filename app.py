@@ -41,7 +41,7 @@ from pathlib import Path
 
 #     st.help(add_indentation)
 
-from addOn.st_pages import Page, Section, show_pages, add_page_title
+from addOn.st_pages import Page, Section, show_pages,add_page_title
 
 add_page_title() # By default this also adds indentation
 
@@ -49,8 +49,8 @@ add_page_title() # By default this also adds indentation
 # should be
 show_pages(
     [
-        Page("basic", "Basic Information", "🏠"),
-        Page("lifestyleInformation", "life Style Information", ":books:"),
+        Page("basic.py", "Basic Information", "🏠"),
+        Page("lifestyleInformation.py", "life Style Information", ":books:"),
         #Section("My section", icon="🎈️"),
         # # Pages after a section will be indented
         # Page("Another page", icon="💪"),
