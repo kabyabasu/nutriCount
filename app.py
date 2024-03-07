@@ -20,12 +20,12 @@ from pathlib import Path
 
 #st.code(Path("pages_section.toml").read_text(), language="toml")
 
-"Streamlit script:"
+# "Streamlit script:"
 
-with st.echo("below"):
-    from src.st_pages import show_pages_from_config
+# with st.echo("below"):
+#     from src.st_pages import show_pages_from_config
 
-    show_pages_from_config("pages_section.toml")
+#     show_pages_from_config("pages_section.toml")
 
 
 # with st.expander("Show documentation"):
@@ -40,3 +40,21 @@ with st.echo("below"):
 #     st.help(Section)
 
 #     st.help(add_indentation)
+
+from st_pages import Page, Section, show_pages, add_page_title
+
+add_page_title() # By default this also adds indentation
+
+# Specify what pages should be shown in the sidebar, and what their titles and icons
+# should be
+show_pages(
+    [
+        Page("basic.py", "Basic Information", "🏠"),
+        Page("lifestyleInformation.py", "life Style Information", ":books:"),
+        Section("My section", icon="🎈️"),
+        # # Pages after a section will be indented
+        # Page("Another page", icon="💪"),
+        # # Unless you explicitly say in_section=False
+        # Page("Not in a section", in_section=False)
+    ]
+)
