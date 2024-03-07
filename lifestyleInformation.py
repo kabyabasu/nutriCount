@@ -38,3 +38,5 @@ def app():
         "Are you Ready to Incorporate Exercise in your Daily routine", ["Yes", "No"]
     )
     supply = st.selectbox("Do you take any health supplements", ["Yes", "No"])
+
+app()
