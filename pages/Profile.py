@@ -1,6 +1,6 @@
 import streamlit as st
 from st_pages import add_page_title
-from basic import form_1
+from pages.basic import form_1
 
 add_page_title()
 
