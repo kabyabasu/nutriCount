@@ -48,7 +48,7 @@ def app():
             form_1[key] = st.session_state[key]
 
 
-        return name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights
+        return name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights,form_1
 
 
 name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights,form_1 = app()
