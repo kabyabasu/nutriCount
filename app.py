@@ -22,10 +22,10 @@ from pathlib import Path
 
 # "Streamlit script:"
 
-# with st.echo("below"):
-#     from src.st_pages import show_pages_from_config
+with st.echo("below"):
+    from st_pages import show_pages_from_config
 
-#     show_pages_from_config("pages_section.toml")
+    show_pages_from_config("pages_section.toml")
 
 
 # with st.expander("Show documentation"):
@@ -41,20 +41,20 @@ from pathlib import Path
 
 #     st.help(add_indentation)
 
-from st_pages import Page, Section, show_pages,add_page_title
+# from st_pages import Page, Section, show_pages,add_page_title
 
-add_page_title() # By default this also adds indentation
+# add_page_title() # By default this also adds indentation
 
-# Specify what pages should be shown in the sidebar, and what their titles and icons
-# should be
-show_pages(
-    [
-        Page("basic.py", "Basic Information", "🏠"),
-        Page("lifestyleInformation.py", "life Style Information", ":books:"),
-        #Section("My section", icon="🎈️"),
-        # # Pages after a section will be indented
-        # Page("Another page", icon="💪"),
-        # # Unless you explicitly say in_section=False
-        # Page("Not in a section", in_section=False)
-    ]
-)
+# # Specify what pages should be shown in the sidebar, and what their titles and icons
+# # should be
+# show_pages(
+#     [
+#         Page("basic.py", "Basic Information", "🏠"),
+#         Page("lifestyleInformation.py", "life Style Information", ":books:"),
+#         #Section("My section", icon="🎈️"),
+#         # # Pages after a section will be indented
+#         # Page("Another page", icon="💪"),
+#         # # Unless you explicitly say in_section=False
+#         # Page("Not in a section", in_section=False)
+#     ]
+# )
