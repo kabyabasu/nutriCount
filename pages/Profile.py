@@ -14,7 +14,7 @@ def app():
 
             "Your weight is", st.session_state['weight'],".\n",
             "Your Height is" ,st.session_state['height'], 
-            "Your current Occupation is st.session_state['occupation']"
+            "Your current Occupation is", st.session_state['occupation']
             )
 
     except:
