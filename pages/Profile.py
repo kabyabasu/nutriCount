@@ -4,8 +4,8 @@ from st_pages import add_page_title
 import streamlit_extras as ste
 add_page_title()
 
-for k, v in st.session_state.items():
-    st.session_state[k] = v
+# for k, v in st.session_state.items():
+#     st.session_state[k] = v
 def app():
 
     st.write(
