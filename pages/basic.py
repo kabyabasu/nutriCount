@@ -94,7 +94,7 @@
 
 import streamlit as st
 
-#@st.cache_data
+@st.cache_data
 def wt():
     if ['weight'] in st.session_state:
         number = st.session_state['weight']
