@@ -135,7 +135,7 @@ def wt():
                 "Retired Field Worker",
                 "Retired Athlete",
             ])
-            st.session_state['occupation'] = current_occupation
+            st.session_state['occupation'] = current_occupation,
 
         st.form_submit_button("Submit")
 
