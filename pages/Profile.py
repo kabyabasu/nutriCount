@@ -10,9 +10,10 @@ def app():
     try:
 
         st.write(
+            "Hey",st.session_state['name'],\n,
 
-            "weight is", st.session_state['weight'],
-            "Height is" ,st.session_state['height'] 
+            "Your weight is", st.session_state['weight'],\n,
+            "Your Height is" ,st.session_state['height'] 
             )
 
     except:
