@@ -1,3 +1,4 @@
 streamlit
 black
 st-pages
+streamlit-extras
