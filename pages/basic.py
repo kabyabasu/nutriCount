@@ -66,28 +66,40 @@
 # name, occupation, duration_of_workday, gender, pregnant, breastfeeding, current_weights = app()
 # #st.write["_weight"]
 
+# import streamlit as st
+
+# # Initialize '_weight' if not in session_state
+# if "_weight" not in st.session_state:
+#     st.session_state["_weight"] = 70  # Default weight
+
+# def app():
+#     with st.form("basic_form"):
+#         # Other form elements...
+        
+#         # Use the slider without an on_change callback
+#         current_weight = st.slider("What is your weight in KG", 40, 170, value=st.session_state.get("_weight", 70), key='weight')
+
+#         submit_button = st.form_submit_button("Submit")
+#         if submit_button:
+#             # Perform actions after submission, e.g., saving the weight
+#             st.session_state["_weight"] = st.session_state["weight"]
+#             # Additional actions based on form input...
+
+#         # Return values are not impacted by the removal of on_change
+#         return current_weight
+
+# current_weight = app()
+# # Optionally display the current weight
+# st.write(f"Your current weight is: {st.session_state.weight} kg")
+
 import streamlit as st
 
-# Initialize '_weight' if not in session_state
-if "_weight" not in st.session_state:
-    st.session_state["_weight"] = 70  # Default weight
+if ['weight'] in st.session_state:
+    number = st.session_state['weight']
 
-def app():
-    with st.form("basic_form"):
-        # Other form elements...
-        
-        # Use the slider without an on_change callback
-        current_weight = st.slider("What is your weight in KG", 40, 170, value=st.session_state.get("_weight", 70), key='weight')
+else:
+    current_weight = st.slider("What is your weight in KG", 40, 170, value= 70)
+    st.session_state['weight'] = current_weight
 
-        submit_button = st.form_submit_button("Submit")
-        if submit_button:
-            # Perform actions after submission, e.g., saving the weight
-            st.session_state["_weight"] = st.session_state["weight"]
-            # Additional actions based on form input...
 
-        # Return values are not impacted by the removal of on_change
-        return current_weight
-
-current_weight = app()
-# Optionally display the current weight
-st.write(f"Your current weight is: {st.session_state.weight} kg")
+st.write(st.session_state.weight)
