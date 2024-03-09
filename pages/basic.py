@@ -96,19 +96,22 @@ import streamlit as st
 
 #@st.cache_data
 def wt():
-    if ['weight'] in st.session_state:
-        current_weight = st.session_state['weight']
+    with st.form("Basic Information"):
+        if ['weight'] in st.session_state:
+            current_weight = st.session_state['weight']
 
-    else:
-        current_weight = st.slider("What is your weight in KG", 40, 170, value= 70)
-        st.session_state['weight'] = current_weight
+        else:
+            current_weight = st.slider("What is your weight in KG", 40, 170, value= 70)
+            st.session_state['weight'] = current_weight
 
-    if ['height'] in st.session_state:
-        current_height = st.session_state['height']
+        if ['height'] in st.session_state:
+            current_height = st.session_state['height']
 
-    else:
-        current_height = st.slider("What is your height in CM", 120, 190, value= 130)
-        st.session_state['height'] = current_height
+        else:
+            current_height = st.slider("What is your height in CM", 120, 190, value= 130)
+            st.session_state['height'] = current_height
+
+        st.form_submit_button("Submit")
 
 
     #if ["heigh"] in st.session_state:
