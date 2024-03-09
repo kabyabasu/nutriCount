@@ -151,7 +151,7 @@ def wt():
                 "Heavy (10+ Hours)",
                 "Walking Zombie (12+ Hours)",
             ])
-        st.session_state["duration_of_workday"] = current_duration_of_workday
+        st.session_state["duration_of_workday"] = current_duration_of_workday,
 
         st.form_submit_button("Submit")
 
