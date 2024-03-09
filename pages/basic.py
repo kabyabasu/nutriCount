@@ -137,6 +137,22 @@ def wt():
             ])
             st.session_state['occupation'] = current_occupation,
 
+
+        if 'duration_of_workday' in st.session_state:
+            current_duration_of_workday = st.session_state["duration_of_workday"]
+
+        else:
+    
+         current_duration_of_workday = st.selectbox(
+            "How much time you spend on work",
+            [
+                "Light (Daily Average of up to 4 Hours)",
+                "Moderate (Up to 8 Hours)",
+                "Heavy (10+ Hours)",
+                "Walking Zombie (12+ Hours)",
+            ])
+        st.session_state["duration_of_workday"] = current_duration_of_workday
+
         st.form_submit_button("Submit")
 
 
