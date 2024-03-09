@@ -10,7 +10,7 @@ def app():
 
     st.write(
 
-        weight is st.session_state['weight'] 
+        weight is st.session_state['weight'],
         Height is st.session_state['height'] 
         )
     #option = ste.selectbox("How would you like to be contacted?", range(100),key="selectbox")
