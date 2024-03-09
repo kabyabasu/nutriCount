@@ -10,9 +10,9 @@ def app():
     try:
 
         st.write(
-            "Hey",st.session_state['name'],\n,
+            "Hey",st.session_state['name'],"\n"
 
-            "Your weight is", st.session_state['weight'],\n,
+            "Your weight is", st.session_state['weight'],"\n",
             "Your Height is" ,st.session_state['height'] 
             )
 
