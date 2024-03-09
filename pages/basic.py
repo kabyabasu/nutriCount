@@ -97,6 +97,14 @@ import streamlit as st
 #@st.cache_data
 def wt():
     with st.form("Basic Information"):
+
+        if ["name"] in st.session_state:
+            current_name = session_state["name"]
+        else:
+            current_name = st.text_input("What is your Name?")
+            st.session_state["name"] = current_name
+
+        name = 
         if ['weight'] in st.session_state:
             current_weight = st.session_state['weight']
 

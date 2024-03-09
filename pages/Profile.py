@@ -7,12 +7,16 @@ add_page_title()
 # for k, v in st.session_state.items():
 #     st.session_state[k] = v
 def app():
+    try:
 
-    st.write(
+        st.write(
 
-        "weight is", st.session_state['weight'],
-        "Height is" ,st.session_state['height'] 
-        )
+            "weight is", st.session_state['weight'],
+            "Height is" ,st.session_state['height'] 
+            )
+
+    except:
+        st.write("Well! You need to finish Giving Us Input","Go Back to Profile Settings and Procvide Us required Input"")
     #option = ste.selectbox("How would you like to be contacted?", range(100),key="selectbox")
 
    # st.write("You selected:", option)
