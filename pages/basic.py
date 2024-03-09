@@ -46,11 +46,10 @@
 #         # For the slider, just create it without manually setting session_state
 #         st.session_state["weight"] = st.session_state["_weight"]
 
-        
 
 #         get_value("_weight")
 #         current_weights = st.slider("What is your weight in KG", 40, 170, key='weight',on_change=save_data)
-        
+
 
 #         # No need to manually set session_state['weight'], Streamlit does it automatically
 #         submit_button = st.form_submit_button("Submit")
@@ -75,7 +74,7 @@
 # def app():
 #     with st.form("basic_form"):
 #         # Other form elements...
-        
+
 #         # Use the slider without an on_change callback
 #         current_weight = st.slider("What is your weight in KG", 40, 170, value=st.session_state.get("_weight", 70), key='weight')
 
@@ -94,7 +93,8 @@
 
 import streamlit as st
 
-#@st.cache_data
+
+# @st.cache_data
 def wt():
     with st.form("Basic Information"):
 
@@ -104,66 +104,59 @@ def wt():
             current_name = st.text_input("What is your Name?")
             st.session_state["name"] = current_name
 
-        if ['weight'] in st.session_state:
-            current_weight = st.session_state['weight']
+        if ["weight"] in st.session_state:
+            current_weight = st.session_state["weight"]
 
         else:
-            current_weight = st.slider("What is your weight in KG", 40, 170, value= 70)
-            st.session_state['weight'] = current_weight
+            current_weight = st.slider("What is your weight in KG", 40, 170, value=70)
+            st.session_state["weight"] = current_weight
 
-        if ['height'] in st.session_state:
-            current_height = st.session_state['height']
+        if ["height"] in st.session_state:
+            current_height = st.session_state["height"]
 
         else:
-            current_height = st.slider("What is your height in CM", 120, 190, value= 130)
-            st.session_state['height'] = current_height
-
+            current_height = st.slider("What is your height in CM", 120, 190, value=130)
+            st.session_state["height"] = current_height
 
         if "occupation" in st.session_state:
-            current_occupation= st.session_state['occupation']
+            current_occupation = st.session_state["occupation"]
 
         else:
             occupation = st.selectbox(
                 "Pick your occupation",
-            [
-                "Homebody (Housepersons/maids/Stay at home parents)",
-                "Student",
-                "Desk Worker (Any job including long duration of stationary sitting/standing)",
-                "Field Worker (Any job that requires manual practice)",
-                "Professional Athletes",
-                "Retired Desk Worker",
-                "Retired Field Worker",
-                "Retired Athlete",
-            ])
-            st.session_state['occupation'] = current_occupation,
+                [
+                    "Homebody (Housepersons/maids/Stay at home parents)",
+                    "Student",
+                    "Desk Worker (Any job including long duration of stationary sitting/standing)",
+                    "Field Worker (Any job that requires manual practice)",
+                    "Professional Athletes",
+                    "Retired Desk Worker",
+                    "Retired Field Worker",
+                    "Retired Athlete",
+                ],
+            )
+            st.session_state["occupation"] = (current_occupation,)
 
-
-        if 'duration_of_workday' in st.session_state:
+        if "duration_of_workday" in st.session_state:
             current_duration_of_workday = st.session_state["duration_of_workday"]
 
         else:
-    
-         current_duration_of_workday = st.selectbox(
-            "How much time you spend on work",
-            [
-                "Light (Daily Average of up to 4 Hours)",
-                "Moderate (Up to 8 Hours)",
-                "Heavy (10+ Hours)",
-                "Walking Zombie (12+ Hours)",
-            ]),
-        st.session_state["duration_of_workday"] = current_duration_of_workday,
+
+            current_duration_of_workday = st.selectbox(
+                    "How much time you spend on work",
+                    [
+                        "Light (Daily Average of up to 4 Hours)",
+                        "Moderate (Up to 8 Hours)",
+                        "Heavy (10+ Hours)",
+                        "Walking Zombie (12+ Hours)",
+                    ])
+            
+
+            st.session_state["duration_of_workday"] = current_duration_of_workday
 
         st.form_submit_button("Submit")
 
-
-    #if ["heigh"] in st.session_state:
-
-
-
-    
-
-
-
+    # if ["heigh"] in st.session_state:
 
     st.write(st.session_state.weight)
 
