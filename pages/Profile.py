@@ -1,6 +1,7 @@
 import streamlit as st
 from st_pages import add_page_title
 from algo.shs import new_weigh
+import streamlit-extras as ste
 add_page_title()
 
 def app():
