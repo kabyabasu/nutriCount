@@ -13,7 +13,8 @@ def app():
             "Hey",st.session_state['name'],".\n"
 
             "Your weight is", st.session_state['weight'],".\n",
-            "Your Height is" ,st.session_state['height'] 
+            "Your Height is" ,st.session_state['height'], 
+            "Your current Occupation is st.session_state['occupation']"
             )
 
     except:

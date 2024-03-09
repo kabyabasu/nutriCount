@@ -103,6 +103,7 @@ def wt():
         else:
             current_name = st.text_input("What is your Name?")
             st.session_state["name"] = current_name
+
         if ['weight'] in st.session_state:
             current_weight = st.session_state['weight']
 
@@ -116,6 +117,25 @@ def wt():
         else:
             current_height = st.slider("What is your height in CM", 120, 190, value= 130)
             st.session_state['height'] = current_height
+
+
+        if "occupation" in st.session_state:
+            current_occupation= st.session_state['occupation']
+
+        else:
+            occupation = st.selectbox(
+                "Pick your occupation",
+            [
+                "Homebody (Housepersons/maids/Stay at home parents)",
+                "Student",
+                "Desk Worker (Any job including long duration of stationary sitting/standing)",
+                "Field Worker (Any job that requires manual practice)",
+                "Professional Athletes",
+                "Retired Desk Worker",
+                "Retired Field Worker",
+                "Retired Athlete",
+            ])
+            st.session_state['occupation'] = current_occupation
 
         st.form_submit_button("Submit")
 
