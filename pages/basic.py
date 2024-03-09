@@ -135,7 +135,7 @@ def wt():
                     "Retired Athlete",
                 ],
             )
-            st.session_state["occupation"] = (current_occupation,)
+            st.session_state["occupation"] = current_occupation
 
         if "duration_of_workday" in st.session_state:
             current_duration_of_workday = st.session_state["duration_of_workday"]
