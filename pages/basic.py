@@ -103,8 +103,6 @@ def wt():
         else:
             current_name = st.text_input("What is your Name?")
             st.session_state["name"] = current_name
-
-        name = 
         if ['weight'] in st.session_state:
             current_weight = st.session_state['weight']
 

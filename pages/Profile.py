@@ -16,7 +16,7 @@ def app():
             )
 
     except:
-        st.write("Well! You need to finish Giving Us Input","Go Back to Profile Settings and Procvide Us required Input"")
+        st.write("Well! You need to finish Giving Us Input","Go Back to Profile Settings and Procvide Us required Input")
     #option = ste.selectbox("How would you like to be contacted?", range(100),key="selectbox")
 
    # st.write("You selected:", option)
