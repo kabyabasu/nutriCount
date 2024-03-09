@@ -97,11 +97,18 @@ import streamlit as st
 @st.cache_data
 def wt():
     if ['weight'] in st.session_state:
-        number = st.session_state['weight']
+        current_weight = st.session_state['weight']
 
     else:
         current_weight = st.slider("What is your weight in KG", 40, 170, value= 70)
         st.session_state['weight'] = current_weight
+
+
+    #if ["heigh"] in st.session_state:
+
+
+
+    
 
 
 
