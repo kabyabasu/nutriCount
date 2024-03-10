@@ -10,11 +10,17 @@ def app():
     st.markdown("#Summary Health Status")
     #b= bm(st.session_state["height"],st.session_state["weight"])
     #bmi = bm(st.session_state["height"],st.session_state["weight"])
+    if ["bmi"] in st.session_state:
+        current_bmi = st.session_state["bmi"]
+    else:
+        current_bmi = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)
+        st.session_state["bmi"] = current_bmi
+    
 
     
     st.write("Your BMI is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2))
     st.write("Your BMI Prime is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25)
-    st.write("Your test case BMI Prime is ",st.session_state["bm"])
+    st.write("Your test case BMI Prime is ",st.session_state["bmi"])
 
 
 

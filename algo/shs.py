@@ -12,11 +12,11 @@ def bm(D7,D9):
 
     print(result)
     return result
-if ["bm"] in st.session_state:
-    current_bm = st.session_state["bm"]
-else:
-    current_bm = bm(st.session_state["height"],st.session_state["weight"])
-    st.session_state["bm"] = current_bm
+# if ["bm"] in st.session_state:
+#     current_bm = st.session_state["bm"]
+# else:
+#     current_bm = bm(st.session_state["height"],st.session_state["weight"])
+#     st.session_state["bm"] = current_bm
 
 # (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)
 
