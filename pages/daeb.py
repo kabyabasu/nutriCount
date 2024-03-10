@@ -49,8 +49,13 @@ def app():
         else:
             current_ci = st.number_input("How Many Cups of Coffee you drink per day", min_value=0, max_value=10)
             st.session_state["ci"] = current_ci
+        if ["water_intake"] in st.session_state:
+            current_water_intake = st.session_state["water_intake"]
+        else:
+            current_water_intake = st.number_input("How many Liters of Water you drink in a day", min_value=1, max_value=6)
+            st.session_state["water_intake"] = current_water_intake
 
-        water_intake = st.number_input("How many Liters of Water you drink in a day", 1, 6)
+
         daily_calories = st.slider(
             "What is your daily Cal Consumption (best guess)", 500, 5000, value=3500
         )

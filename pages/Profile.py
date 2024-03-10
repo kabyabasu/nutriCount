@@ -35,7 +35,8 @@ def app():
             "How many meals you eat per day",st.session_state["cnom"],".  \n",
             "What are these meals",st.session_state["cnom_detail"],".  \n",
             "what is your first meal", st.session_state["first_major_meal"],"  \n",
-            "How many cups of coffee you drink", st.session_state["ci"]            
+            "How many cups of coffee you drink", st.session_state["ci"],"  \n",
+            "How many Lt. of water you drink" ,st.session_state["water_intake"],"  \n" 
             )
 
     except:
