@@ -109,7 +109,7 @@ def app():
         current_required_min_weight_change = st.session_state["required_min_weight_change"]
 
     else:
-        current_required_min_weight_change = max(st.session_state["healthy_weight_median"])
+        current_required_min_weight_change = max(st.session_state["healthy_weight_range"])
         st.session_state["required_min_weight_change"] = current_required_min_weight_change
  
     
