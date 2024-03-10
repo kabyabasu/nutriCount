@@ -49,7 +49,16 @@ def app():
         "Do you have any of these medical Conditions",st.session_state["mc"][0],"  \n",
         "If you have any medical condition that is not mentioned above, please give details",st.session_state["mc_add"],"  \n",
         "Do you have any of the following Special Conditions",st.session_state["md"][0],"  \n",
-        "If you have any Special condition that is not mentioned above, please give details",st.session_state["md_ad"],"  \n"
+        "If you have any Special condition that is not mentioned above, please give details",st.session_state["md_ad"],"  \n",
+        "What is the level of your physical Activity",st.session_state["current_lifeStyle"],"  \n",
+        "Chose the best option that suggest your current fitness Level",st.session_state["Current_Fitness_Level"],"  \n",
+        "Are you a smoker",st.session_state["smoker"],"  \n",
+        "How much alcohol do you consume",st.session_state["alcohol"],"  \n",
+        "Are you Ready to Incorporate Exercise in your Daily routine",st.session_state["otie"],"  \n",
+        "Do you take any health supplements",st.session_state["supply"],"  \n"
+
+
+
 
 
 
