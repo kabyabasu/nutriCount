@@ -94,25 +94,25 @@ def app():
             current_diet_observation_values = st.session_state["diet_observation_values"]
         else:
             if current_diet_observation == "None":
-                current_diet_observation_value = 1
+                current_diet_observation_values = 1
             elif current_diet_observation == "Primarily Carbs":
-                current_diet_observation_value = 2
+                current_diet_observation_values = 2
             elif current_diet_observation == "High Sugar Consumption":
-                current_diet_observation_value = 3
+                current_diet_observation_values = 3
             elif current_diet_observation == "Lack of Protein":
-                current_diet_observation_value = 4
+                current_diet_observation_values = 4
             elif current_diet_observation == "Erratic Meal Times":
-                current_diet_observation_value = 5
+                current_diet_observation_values = 5
             elif current_diet_observation == "Insufficient Balance of Macros":
-                current_diet_observation_value = 6
+                current_diet_observation_values = 6
             elif current_diet_observation == "Balanced Meals":
-                current_diet_observation_value = 7
+                current_diet_observation_values = 7
             elif current_diet_observation == "Unnecessary supplements":
-                current_diet_observation_value = 8
+                current_diet_observation_values = 8
             elif current_diet_observation == "High Fat Intake":
-                current_diet_observation_value = 9
+                current_diet_observation_values = 9
 
-            st.session_state["diet_observation_values"] = current_diet_observation_value
+            st.session_state["diet_observation_values"] = current_diet_observation_values
 
             
 
