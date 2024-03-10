@@ -13,5 +13,5 @@ def bm(D7,D9):
     print(result)
     return result
 
-bm = bm(st.session_state["height"],st.session_state["weight"])
+#bm = bm(st.session_state["height"],st.session_state["weight"])
 
