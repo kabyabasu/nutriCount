@@ -72,19 +72,27 @@ def app():
                 ],
             )
             st.session_state["tingling"] = current_tingling
+
+        if ["tingling_intensity"] in st.session_state:
+            current_tingling_intensity = st.session_state["tingling_intensity"]
+
+        else:
+
+            current_tingling_intensity = (
+                st.selectbox(
+                    "What is the intensity of Tingling or Numbness in the body",
+                    [
+                        "No Tingling or Numbness",
+                        "Mild (It doesn't bother me much but I feel it)",
+                        "Moderate  (Feel it everday but I manage)",
+                        "Severe (Daily activities are affected)",
+                        "Life has no meaning (Need immediate relief)",
+                    ],
+                ),
+            )
+            st.session_state["tingling_intensity"] = current_tingling_intensity
             
-        tingling_intensity = (
-            st.selectbox(
-                "What is the intensity of Tingling or Numbness in the body",
-                [
-                    "No Tingling or Numbness",
-                    "Mild (It doesn't bother me much but I feel it)",
-                    "Moderate  (Feel it everday but I manage)",
-                    "Severe (Daily activities are affected)",
-                    "Life has no meaning (Need immediate relief)",
-                ],
-            ),
-        )
+
 
         tingling_location = st.multiselect(
             "Where do you have Tingling or Numbness in the body",
