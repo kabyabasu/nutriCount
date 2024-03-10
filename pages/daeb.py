@@ -21,7 +21,7 @@ def app():
                     "Gluten Free",
                 ],
             )
-            st.session_state["diet_style"] current_diet_style
+            st.session_state["diet_style"] = current_diet_style
         
         cnom = st.number_input("How many meals you eat per day", min_value=1, max_value=6)
         cnom_detail = st.text_input("What are these meals", max_chars=130, help="breakfast")
