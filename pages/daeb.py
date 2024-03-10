@@ -22,9 +22,19 @@ def app():
                 ],
             )
             st.session_state["diet_style"] = current_diet_style
-        
-        cnom = st.number_input("How many meals you eat per day", min_value=1, max_value=6)
-        cnom_detail = st.text_input("What are these meals", max_chars=130, help="breakfast")
+
+        if ["cnom"] in st.session_state:
+            current_cnom = st.session_state["cnom"]
+        else:
+            current_cnom = st.number_input("How many meals you eat per day", min_value=1, max_value=6)
+            st.session_state["cnom"] =current_cnom
+
+        if ["cnom_detail"] in st.session_state:
+            current_cnom_detail = st.session_state["cnom_detail"]
+        else:
+            current_cnom_detail = st.text_input("What are these meals", max_chars=130, help="breakfast")
+            st.session_state["cnom_detail"] = current_cnom_detail
+
         first_major_meal = st.selectbox(
             "What is your first major meal of the Day",
             [
@@ -80,7 +90,7 @@ def app():
                 "High Fat Intake",
             ],
         )
-        st.form_submit_button("submit To BankaiFit")
+        st.form_submit_button("Submit To BankaiFit")
 
 
 app()
