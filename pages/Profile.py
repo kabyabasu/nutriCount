@@ -23,7 +23,7 @@ def app():
             "Your pain intesity is", st.session_state["pain_intensity"],
             "Your Pain Location is ", st.session_state["pain_location"][0],
             "Your have tingling sension", st.session_state["tingling"],
-            "Your tignling intensity is ",st.session_state["tingling_intensity"]
+            "Your tignling intensity is ",st.session_state["tingling_intensity"],
             "Your current tingling location is ", st.session_state["tingling_location"][0]
             
             )
