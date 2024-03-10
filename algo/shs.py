@@ -14,4 +14,5 @@ def bm(D7,D9):
     return result
 
 #bm = bm(st.session_state["height"],st.session_state["weight"])
+# (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)
 
