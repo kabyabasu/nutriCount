@@ -10,8 +10,9 @@ def app():
     #col1,col2 = st.columns([1,1])
     st.markdown(#Summary Health Status)
     #b= bm(st.session_state["height"],st.session_state["weight"])
+    bmi = bm(st.session_state["height"],st.session_state["weight"])
 
-    st.write("Your BMI is ", bm(st.session_state["height"],st.session_state["weight"]))
+    st.write("Your BMI is ",bmi)
 
 
     # try:
@@ -72,5 +73,5 @@ def app():
 
    # st.write("You selected:", option)
 
- 
+
 app()
