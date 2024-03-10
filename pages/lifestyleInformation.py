@@ -7,8 +7,8 @@ def app():
     with st.form("Life style Condition"):
 
         # For the level of physical activity
-        if ["current_lifeStyle"] in st.session_state:
-            current_lifeStyle = st.session_state["current_lifeStyle"]
+        if ["lifeStyle"] in st.session_state:
+            current_lifeStyle = st.session_state["lifeStyle"]
         else:
             current_lifeStyle = st.selectbox(
                 "What is the level of your physical Activity",
@@ -18,14 +18,13 @@ def app():
                     "Moderately Active (4 - 5 hours per week)",
                     "Very Active (5+ hours per week)",
                     "Extra Active",
-                ],
-                key='current_lifeStyle'  # Unique key for widget
+                ], # Unique key for widget
             )
-            st.session_state["current_lifeStyle"] = current_lifeStyle
+            st.session_state["lifeStyle"] = current_lifeStyle
 
         # For current fitness level
-        if ["Current_Fitness_Level"] in st.session_state:
-            Current_Fitness_Level = st.session_state["Current_Fitness_Level"]
+        if ["Fitness_Level"] in st.session_state:
+            Current_Fitness_Level = st.session_state["Fitness_Level"]
         else:
             Current_Fitness_Level = st.selectbox(
                 "Chose the best option that suggest your current fitness Level",
@@ -35,49 +34,47 @@ def app():
                     "Actively work out without supervision",
                     "Used to work out under supervision",
                     "Used to work out without supervision",
-                ],
-                key='Current_Fitness_Level'  # Unique key for widget
+                ], # Unique key for widget
             )
-            st.session_state["Current_Fitness_Level"] = Current_Fitness_Level
+            st.session_state["Fitness_Level"] = Current_Fitness_Level
 
         # For smoker status
         if ["smoker"] in st.session_state:
-            smoker = st.session_state["smoker"]
+            current_smoker = st.session_state["smoker"]
         else:
-            smoker = st.selectbox("Are you a smoker", ["No", "Yes"], key='smoker')  # Unique key for widget
-            st.session_state["smoker"] = smoker
+            current_smoker = st.selectbox("Are you a smoker", ["No", "Yes"])  # Unique key for widget
+            st.session_state["smoker"] = current_smoker
 
         # For alcohol consumption
         if ["alcohol"] in st.session_state:
-            alcohol = st.session_state["alcohol"]
+            current_alcohol = st.session_state["alcohol"]
         else:
-            alcohol = st.selectbox(
+            current_alcohol = st.selectbox(
                 "How much alcohol do you consume",
                 [
                     "Teetotaler",
                     "Occasional Drinker (Less than 2 drinks a week)",
                     "Moderate Consumer (Up to 5 drinks a week)",
                     "Heavy Drinker (5+ drinks weekly)",
-                ],
-                key='alcohol'  # Unique key for widget
+                ]  # Unique key for widget
             )
-            st.session_state["alcohol"] = alcohol
+            st.session_state["alcohol"] = current_alcohol
 
         # For willingness to incorporate exercise
         if ["otie"] in st.session_state:
-            otie = st.session_state["otie"]
+            current_otie = st.session_state["otie"]
         else:
-            otie = st.selectbox(
+            current_otie = st.selectbox(
                 "Are you Ready to Incorporate Exercise in your Daily routine", ["Yes", "No"], key='otie'  # Unique key for widget
             )
-            st.session_state["otie"] = otie
+            st.session_state["otie"] = current_otie
 
         # For health supplements intake
         if ["supply"] in st.session_state:
-            supply = st.session_state["supply"]
+            current_supply = st.session_state["supply"]
         else:
-            supply = st.selectbox("Do you take any health supplements", ["Yes", "No"], key='supply')  # Unique key for widget
-            st.session_state["supply"] = supply
+            current_supply = st.selectbox("Do you take any health supplements", ["Yes", "No"], key='supply')  # Unique key for widget
+            st.session_state["supply"] = current_supply
 
 
 
