@@ -15,7 +15,11 @@ def app():
             "Your weight is", st.session_state['weight'],".\n",
             "Your Height is" ,st.session_state['height'],'\n',
             "Your current Occupation is", st.session_state['occupation'],
-            "Your current number of work hour is", st.session_state['duration_of_workday']
+            "Your current number of work hour is", st.session_state['duration_of_workday'],
+            "Your Gender is ",st.session_state['gender'],
+            "You are", st.selectbox["pregnant"], "pregnent",
+            "You are", st.selectbox["breastfeeding"], "breastfeeding"
+
             )
 
     except:

@@ -153,6 +153,24 @@ def wt():
             )
 
             st.session_state["duration_of_workday"] = current_duration_of_workday
+        if ["gender"] in st.session_state:
+            current_gender = session_state["gender"]
+        else:
+            current_gender = st.selectbox("Insert Your Gender", ["Male", "Female"])
+            st.selectbox["gender"] = current_gender
+
+        if ["pregnant"] in st.session_state:
+            current_pregnant = session_state["pregnant"]
+        else:
+            current_pregnant = st.selectbox("Are You Pregnant", ["No", "Yes"])
+            st.selectbox["pregnant"] = current_pregnant
+
+    
+        if ["breastfeeding"] in st.session_state:
+            current_breastfeeding = session_state["breastfeeding"]
+        else:
+            current_breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"])
+            st.selectbox["breastfeeding"] = current_breastfeeding
 
         st.form_submit_button("Submit")
 
