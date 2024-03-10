@@ -59,9 +59,7 @@ def app():
                     "Fat Loss",
                     "Improve Sleep",
                     "Sugar Control",
-                ],
-                key='g1'  # Ensure unique key for this widget
-            )
+                ]            )
             st.session_state["g1"] = current_g1
 
     # For Secondary Goal
@@ -78,8 +76,7 @@ def app():
                     "Fat Loss",
                     "Improve Sleep",
                     "Sugar Control",
-                ],
-                key='g2'  # Ensure unique key for this widget
+                ] # Ensure unique key for this widget
             )
             st.session_state["g2"] = current_g2
 
@@ -97,8 +94,7 @@ def app():
                     "Fat Loss",
                     "Improve Sleep",
                     "Sugar Control",
-                ],
-                key='g3'  # Ensure unique key for this widget
+                ] # Ensure unique key for this widget
             )
             st.session_state["g3"] = current_g3
         
