@@ -121,87 +121,123 @@ def app():
             )
             st.session_state["tingling_location"] = current_tingling_location
 
-        
-        weekness = st.selectbox(
-            "Do you have weekness in the body",
-            [
-                "No",
-                "Yes",
-            ],
-        )
-        weekness_intensity = st.selectbox(
-            "What is the intensity of weekness in the body",
-            [
-                "No weekness",
-                "Mild (It doesn't bother me much but I feel it)",
-                "Moderate  (Feel it everday but I manage)",
-                "Severe (Daily activities are affected)",
-                "Life has no meaning (Need immediate relief)",
-            ],
-        )
-        weekness_location = st.multiselect(
-            "Where do you have weekness in the body",
-            [
-                "No weekness",
-                "Neck",
-                "Shoulder",
-                "Arm",
-                "Forearm",
-                "Elbow",
-                "Wrist + Hand",
-                "Upper Back",
-                "Lower Back",
-                "Hip & Thigh",
-                "Knee",
-                "Shin",
-                "Ankle",
-                "Foot",
-                "Chest",
-                "Groin",
-                "Stomach",
-            ],
-            default="No weekness",
-        )
-        tightness = st.selectbox(
-            "Do you have Tightness or Stiffness in muscles or joints in the body",
-            [
-                "No",
-                "Yes",
-            ],
-        )
-        tightness_intensity = st.selectbox(
-            "What is the intensity of Tightness or Stiffness in the body",
-            [
-                "No Tightness or Stiffness",
-                "Mild (It doesn't bother me much but I feel it)",
-                "Moderate  (Feel it everday but I manage)",
-                "Severe (Daily activities are affected)",
-                "Life has no meaning (Need immediate relief)",
-            ],
-        )
-        tightness_location = st.multiselect(
-            "Where do you have Tightness or Stiffness in the body",
-            [
-                "No Tightness or Stiffness",
-                "Neck",
-                "Shoulder",
-                "Arm",
-                "Forearm",
-                "Elbow",
-                "Wrist + Hand",
-                "Upper Back",
-                "Lower Back",
-                "Hip & Thigh",
-                "Knee",
-                "Shin",
-                "Ankle",
-                "Foot",
-                "Chest",
-                "Groin",
-                "Stomach",
-            ],
-            default="No Tightness or Stiffness",
-        )
+        if ["weekness"] in st.session_state:
+            current_weekness = st.session_state["weekness"]
+
+        else:
+
+            current_weekness = st.selectbox(
+                "Do you have weekness in the body",
+                [
+                    "No",
+                    "Yes",
+                ],
+            )
+            st.session_state["weekness"] = current_weekness
+
+        if ["weekness_intensity"] in st.session_state:
+            current_weekness_intensity = st.session_state["weekness_intensity"]
+
+        else:
+
+            current_weekness_intensity = st.selectbox(
+                "What is the intensity of weekness in the body",
+                [
+                    "No weekness",
+                    "Mild (It doesn't bother me much but I feel it)",
+                    "Moderate  (Feel it everday but I manage)",
+                    "Severe (Daily activities are affected)",
+                    "Life has no meaning (Need immediate relief)",
+                ],
+            )
+            st.session_state["weekness_intensity"] current_weekness_intensity
+
+        if ["weekness_location"] in st.session_state:
+            current_weekness_location = st.session_state["weekness_location"]
+
+        else:
+
+            current_weekness_location = st.multiselect(
+                "Where do you have weekness in the body",
+                [
+                    "No weekness",
+                    "Neck",
+                    "Shoulder",
+                    "Arm",
+                    "Forearm",
+                    "Elbow",
+                    "Wrist + Hand",
+                    "Upper Back",
+                    "Lower Back",
+                    "Hip & Thigh",
+                    "Knee",
+                    "Shin",
+                    "Ankle",
+                    "Foot",
+                    "Chest",
+                    "Groin",
+                    "Stomach",
+                ],
+                default="No weekness",
+            )
+            st.session_state["weekness_location"] = current_weekness_location
+
+        if ["tightness"] in st.session_state:
+            current_tightness = st.session_state["tightness"]
+
+        else:
+            current_tightness = st.selectbox(
+                "Do you have Tightness or Stiffness in muscles or joints in the body",
+                [
+                    "No",
+                    "Yes",
+                ],
+            )
+            st.session_state["tightness"] = current_tightness
+
+        if ["tightness_intensity"] in st.session_state:
+            current_tightness_intensity = st.session_state["tightness_intensity"]
+
+        else:
+            current_tightness_intensity = st.selectbox(
+                "What is the intensity of Tightness or Stiffness in the body",
+                [
+                    "No Tightness or Stiffness",
+                    "Mild (It doesn't bother me much but I feel it)",
+                    "Moderate  (Feel it everday but I manage)",
+                    "Severe (Daily activities are affected)",
+                    "Life has no meaning (Need immediate relief)",
+                ],
+            )
+            st.session_state["tightness_intensity"] = current_tightness_intensity
+
+        if ["tightness_location"] in st.session_state:
+            current_tightness_location = st.session_state["tightness_location"]
+        else:
+            current_tightness_location = st.multiselect(
+                "Where do you have Tightness or Stiffness in the body",
+                [
+                    "No Tightness or Stiffness",
+                    "Neck",
+                    "Shoulder",
+                    "Arm",
+                    "Forearm",
+                    "Elbow",
+                    "Wrist + Hand",
+                    "Upper Back",
+                    "Lower Back",
+                    "Hip & Thigh",
+                    "Knee",
+                    "Shin",
+                    "Ankle",
+                    "Foot",
+                    "Chest",
+                    "Groin",
+                    "Stomach",
+                ],
+                default="No Tightness or Stiffness",
+            )
+            st.session_state["tightness_location"] = current_tightness_location
   
         
         st.form_submit_button("submit")
