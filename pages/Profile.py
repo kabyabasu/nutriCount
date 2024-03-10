@@ -7,8 +7,27 @@ add_page_title()
 #     st.session_state[k] = v
 def app():
     #col1,col2 = st.columns([1,1])
-    st.markdown("#Summary Health Status")
+
     raw_sources = ["Severe Thinness","Moderate Thinness","Mild Thinness","Normal","Overweight","Obese Class I","Obese Class II","Obese Class III"]
+    
+    thresholds_height = [
+        147, 149, 152, 154, 157, 159, 162, 164, 167, 169, 172, 174, 177, 179, 182, 185, 187, 190, 192
+    ]
+    
+    # Defining return values (ranges) and calculating medians
+    return_values = [
+        (41.4, 52.3), (42.8, 54.1), (44.1, 56.0), (45.5, 57.8), (47.3, 59.6),
+        (48.7, 61.4), (50.0, 63.7), (51.9, 65.5), (53.7, 67.3), (55.0, 69.6),
+        (56.9, 71.9), (58.2, 73.7), (60.0, 76.0), (61.9, 78.2), (63.7, 80.5),
+        (65.5, 82.8), (67.3, 84.6), (69.1, 87.3), (71.0, 89.6)
+    ]
+    
+    # Creating a list of tuples, each with a threshold, return range, and median
+    thresholds_and_values = [
+        (thresholds_height, val, (val[0] + val[1]) / 2) for threshold, val in zip(thresholds_height, return_values)
+    ]
+
+    st.markdown("#Summary Health Status")
 
     if ["bmi"] in st.session_state:
         current_bmi = st.session_state["bmi"]
@@ -47,6 +66,20 @@ def app():
         
         st.session_state["health_category"] = current_health_category
 
+    if ["healthy_weight_range"] in st.session_state:
+        current_healthy_weight_range = st.session_state["healthy_weight_range"]
+
+    else:
+        for thresholds_height, value_range, median in thresholds_and_values:
+            if st.session_state['height'] <= threshold:
+                current_healthy_weight_range = value_range
+        st.session_state["healthy_weight_range"] = current_healthy_weight_range
+            
+
+        
+
+
+
     
 
 
@@ -55,7 +88,8 @@ def app():
     
     st.write("Your BMI is ",int(current_bmi))
     st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
-    st.write("Yor heath type according to BankaiFit is ", current_health_category)
+    st.write("Your Health Category according to BankaiFit is ", current_health_category)
+    st.write("Your ideal weight Range",st.session_state["healthy_weight_range"])
 
 
 
