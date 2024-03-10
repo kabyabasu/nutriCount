@@ -125,29 +125,14 @@ def wt():
             current_occupation = st.selectbox("Pick your Occupdation", ["Housepersons","Student","Desk Worker","Field Worker","Professional Athletes","Retired Desk Worker","Retired Field Worker","Retired Athletesr"])
             st.session_state["occupation"] = current_occupation
 
-        # if "occupation" in st.session_state:
-        #     current_occupation = st.session_state["occupation"]
-
-        # else:
-        #     current_occupation = st.selectbox("Pick your occupation",["Homebody Housepersons/maids/Stay at home parents","Student"])
-        #     st.session_state["occupation"] = current_occupation
-
         if "duration_of_workday" in st.session_state:
             current_duration_of_workday = st.session_state["duration_of_workday"]
 
         else:
 
-            current_duration_of_workday = st.selectbox(
-                "How much time you spend on work",
-                [
-                    "Light (Daily Average of up to 4 Hours)",
-                    "Moderate (Up to 8 Hours)",
-                    "Heavy (10+ Hours)",
-                    "Walking Zombie (12+ Hours)"
-                ]
-            )
-
+            current_duration_of_workday = st.selectbox("How much time you spend on work",["Light 4 hours","Moderate 8 Hours","Heavy 10+ Hours","Walking Zombie 12+"])
             st.session_state["duration_of_workday"] = current_duration_of_workday
+
         if ["gender"] in st.session_state:
             current_gender = session_state["gender"]
         else:
