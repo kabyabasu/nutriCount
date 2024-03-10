@@ -117,7 +117,7 @@ def app():
         current_maintainance_calorific_intake = st.session_state["maintainance_calorific_intake"]
 
     else:
-        if current_gender == "Male":
+        if st.session_state["gender"] == "Male":
             current_maintainance_calorific_intake = (66.5 + (13.75 * st.session_state['weight']) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * current_lifeStyle_value
 
         else:
