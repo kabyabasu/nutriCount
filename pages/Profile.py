@@ -85,7 +85,7 @@ def app():
     st.session_state["weight_change_category"] = current_weight_change_category
 
 
-     if ["healthy_weight_median"] in st.session_state:
+    if ["healthy_weight_median"] in st.session_state:
         current_healthy_weight_median = st.session_state["healthy_weight_median"]
 
     else:
