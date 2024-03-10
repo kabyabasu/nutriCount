@@ -91,32 +91,37 @@ def app():
                 ),
             )
             st.session_state["tingling_intensity"] = current_tingling_intensity
-            
 
+        if ["tingling_location"] in st.session_state:
+            current_tingling_location = st.session_state["tingling_location"]
 
-        tingling_location = st.multiselect(
-            "Where do you have Tingling or Numbness in the body",
-            [
-                "No Tingling or Numbness",
-                "Neck",
-                "Shoulder",
-                "Arm",
-                "Forearm",
-                "Elbow",
-                "Wrist + Hand",
-                "Upper Back",
-                "Lower Back",
-                "Hip & Thigh",
-                "Knee",
-                "Shin",
-                "Ankle",
-                "Foot",
-                "Chest",
-                "Groin",
-                "Stomach",
-            ],
-            default="No Tingling or Numbness",
-        )
+        else:
+            tingling_location = st.multiselect(
+                "Where do you have Tingling or Numbness in the body",
+                [
+                    "No Tingling or Numbness",
+                    "Neck",
+                    "Shoulder",
+                    "Arm",
+                    "Forearm",
+                    "Elbow",
+                    "Wrist + Hand",
+                    "Upper Back",
+                    "Lower Back",
+                    "Hip & Thigh",
+                    "Knee",
+                    "Shin",
+                    "Ankle",
+                    "Foot",
+                    "Chest",
+                    "Groin",
+                    "Stomach",
+                ],
+                default="No Tingling or Numbness",
+            )
+            st.session_state["tingling_location"] = current_tingling_location
+
+        
         weekness = st.selectbox(
             "Do you have weekness in the body",
             [
