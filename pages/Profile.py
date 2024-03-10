@@ -98,6 +98,20 @@ def app():
                 break
         st.session_state["healthy_weight_median"] = current_healthy_weight_median
 
+    if ["required_weight_change"] in st.session_state:
+        current_required_weight_change = st.session_state["required_weight_change"]
+
+    else:
+        current_required_weight_change = st.session_state['weight']-current_healthy_weight_median
+        st.session_state["required_weight_change"] = current_required_weight_change
+
+    if ["required_min_weight_change"] in st.session_state:
+        current_required_min_weight_change = st.session_state["required_min_weight_change"]
+
+    else:
+        current_required_min_weight_change = max(st.session_state["healthy_weight_median"])
+        st.session_state["required_min_weight_change"] = current_required_min_weight_change
+ 
     
             
 
@@ -120,7 +134,8 @@ def app():
 
     st.markdown("#North Star")
     st.write("Your Ideal weight should be (in KG)",current_healthy_weight_median)
-    st.write("Required weight Change", st.session_state['weight']-current_healthy_weight_median)
+    st.write("Required weight Change",current_required_weight_change)
+    st.write("Required minimum weight Change",current_required_min_weight_change)
 
 
 
