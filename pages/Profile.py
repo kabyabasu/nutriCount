@@ -43,9 +43,9 @@ def app():
         "What % of your total calories from Protein consumption (best guess)",st.session_state["dails_protein"],"  \n",
         # "Choose the food item or items to which you are allergic",[st.session_state["allergens"][i] for i in st.session_state["allergens"]],"  \n",
         # "Choose the item or items that align with your dietary Observation ",[st.session_state["diet_observation"][i] for i in st.session_state["diet_observation"]]
-        "Your primary Goal",st.session_state["g1"],"  \n",
-        "Your secondary Goal",st.session_state["g2"],"  \n",
-        "Your Teritary Goal",st.session_state["g3"],"  \n",
+        "Your primary Goal",st.session_state["g1"],
+        "Your secondary Goal",st.session_state["g2"],
+        "Your Teritary Goal",st.session_state["g3"],
         "Do you have any of these medical Conditions",st.session_state["mc"][0],"  \n",
         "If you have any medical condition that is not mentioned above, please give details",st.session_state["mc_add"],"  \n",
         "Do you have any of the following Special Conditions",st.session_state["md"][0],"  \n",
