@@ -89,7 +89,7 @@ def app():
     st.write("Your BMI is ",int(current_bmi))
     st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
     st.write("Your Health Category according to BankaiFit is ", current_health_category)
-    st.write("Your ideal weight Range",st.session_state["healthy_weight_range"])
+    st.write("Your ideal weight Range",current_healthy_weight_range)
 
 
 
