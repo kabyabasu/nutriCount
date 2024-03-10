@@ -90,6 +90,35 @@ def app():
             current_diet_observation = st.multiselect("Choose the item or items that align with your dietary Observation ",["None","Primarily Carbs","High Sugar Consumption","Lack of Protein","Erratic Meal Times","Insufficient Balance of Macros","Balanced Meals","Unnecessary supplements","High Fat Intake",],)
             st.session_state["diet_observation"] = current_diet_observation
 
+        if ["diet_observation_values"] in st.session_state::
+            current_diet_observation_values = st.session_state["diet_observation_values"]
+        else:
+            if current_diet_observation == "None":
+                current_diet_observation_value = 1
+            elif current_diet_observation == "Primarily Carbs":
+                current_diet_observation_value = 2
+            elif current_diet_observation == "High Sugar Consumption":
+                current_diet_observation_value = 3
+            elif current_diet_observation == "Lack of Protein":
+                current_diet_observation_value = 4
+            elif current_diet_observation == "Erratic Meal Times":
+                current_diet_observation_value = 5
+            elif current_diet_observation == "Insufficient Balance of Macros":
+                current_diet_observation_value = 6
+            elif current_diet_observation == "Balanced Meals":
+                current_diet_observation_value = 7
+            elif current_diet_observation == "Unnecessary supplements":
+                current_diet_observation_value = 8
+            elif current_diet_observation == "High Fat Intake":
+                current_diet_observation_value = 9
+
+            st.session_state["diet_observation_values"] = current_diet_observation_value
+
+            
+
+
+
+
 
 # Repeat for dails_fat and dails_protein with their respective values and text.
 

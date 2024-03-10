@@ -190,6 +190,14 @@ def app():
         st.session_state["recommended_caffeine_intake"] = current_recommended_caffeine_intake
 
 
+    if ["daily_protein_requirement_in_gms"] in st.session_state:
+        current_daily_protein_requirement_in_gms = st.session_state["daily_protein_requirement_in_gms"]
+
+    else:
+        current_daily_protein_requirement_in_gms = st.session_state["diet_observation_values"] * st.session_state['weight']
+        st.session_state["daily_protein_requirement_in_gms"] = current_daily_protein_requirement_in_gms
+
+
 
 
 
@@ -229,7 +237,8 @@ def app():
     st.write("Your Recommended Calorific Intake",current_recommended_calorific_intake)
     st.write("Your Minimum Water Intake In Litres", current_minimum_water_intake_in_litres)
     st.write("Your healthy Water Intake in Litres",current_healthy_water_intake_in_litres)
-    st.write("Your Recommended Caffeine Intake is", current_recommended_caffeine_intake)
+    st.write("Your Recommended Caffeine Intake is - ", current_recommended_caffeine_intake)
+    st.write("Your Daily Protein Requirement in gms is - ",current_daily_protein_requirement_in_gms)
 
 
 
