@@ -175,6 +175,22 @@ def app():
         current_healthy_water_intake_in_litres = math.ceil(current_minimum_water_intake_in_litres * 1.15 * 10) / 10
         st.session_state["healthy_water_intake_in_litres"] = current_healthy_water_intake_in_litres
 
+    
+    if ["recommended_caffeine_intake"] in st.session_state:
+        current_recommended_caffeine_intake = st.session_state["recommended_caffeine_intake"]
+    else:
+        if st.session_state["pregnant"] == "Yes":
+            current_recommended_caffeine_intake = "Not Recommended"
+        else:
+            if st.session_state["breastfeeding"] == "Yes":
+                current_recommended_caffeine_intake = "2 Cups Black Coffee or 2 Cups Black Tea"
+            else:
+                current_recommended_caffeine_intake = "4 Cups Black Coffee or 4 Cups Black Tea"
+       
+        st.session_state["recommended_caffeine_intake"] = current_recommended_caffeine_intake
+
+
+
 
 
 
@@ -213,6 +229,7 @@ def app():
     st.write("Your Recommended Calorific Intake",current_recommended_calorific_intake)
     st.write("Your Minimum Water Intake In Litres", current_minimum_water_intake_in_litres)
     st.write("Your healthy Water Intake in Litres",current_healthy_water_intake_in_litres)
+    st.write("Your Recommended Caffeine Intake is", current_recommended_caffeine_intake)
 
 
 
