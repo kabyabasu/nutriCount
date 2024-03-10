@@ -22,6 +22,26 @@ def app():
             )
             st.session_state["lifeStyle"] = current_lifeStyle
 
+        if ["lifeStyle_value"] in st.session_state:
+            current_lifeStyle_value = st.session_state["lifeStyle_value"]
+        else:
+            if current_lifeStyle ==  "No Physical Activity":
+                current_lifeStyle_value = 1
+            elif current_lifeStyle == "Minimal Activity (<2 hours per week)":
+                current_lifeStyle_value = 1.2
+
+            elif current_lifeStyle == "Moderately Active (4 - 5 hours per week)":
+                current_lifeStyle_value = 1.375
+
+            elif current_lifeStyle == "Very Active (5+ hours per week)":
+                current_lifeStyle_value = 1.55
+
+            elif current_lifeStyle == "Extra Active":
+                current_lifeStyle_value = 1.725
+                
+            st.session_state["lifeStyle_value"] = current_lifeStyle_value
+
+
         # For current fitness level
         if ["Fitness_Level"] in st.session_state:
             Current_Fitness_Level = st.session_state["Fitness_Level"]

@@ -111,7 +111,24 @@ def app():
     else:
         current_required_min_weight_change = st.session_state['weight']-max(st.session_state["healthy_weight_range"])
         st.session_state["required_min_weight_change"] = current_required_min_weight_change
- 
+
+    
+    if ["maintainance_calorific_intake"] in st.session_state:
+        current_maintainance_calorific_intake = st.session_state["maintainance_calorific_intake"]
+
+    else:
+        if current_gender == "Male":
+            current_maintainance_calorific_intake = (66.5 + (13.75 * st.session_state['weight']) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * current_lifeStyle_value
+
+        else:
+
+            current_maintainance_calorific_intake = (655.1 + (9.56 * st.session_state['weight']) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * current_lifeStyle_value
+
+        st.session_state["maintainance_calorific_intake"] = current_maintainance_calorific_intake
+
+    
+
+
     
             
 
@@ -136,6 +153,7 @@ def app():
     st.write("Your Ideal weight should be (in KG)",current_healthy_weight_median)
     st.write("Required weight Change",current_required_weight_change)
     st.write("Required minimum weight Change",current_required_min_weight_change)
+    st.write("Your Maintainance Calorific Intake is ", current_maintainance_calorific_intake)
 
 
 

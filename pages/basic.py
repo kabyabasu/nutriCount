@@ -104,6 +104,13 @@ def wt():
             current_name = st.text_input("What is your Name?")
             st.session_state["name"] = current_name
 
+
+        if ["age"] in st.session_state:
+            current_age = session_state["age"]
+        else:
+            current_age = st.number_input("What is your Age?",5,90)
+            st.session_state["age"] = current_age
+
         if ["weight"] in st.session_state:
             current_weight = st.session_state["weight"]
 
