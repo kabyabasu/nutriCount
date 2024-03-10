@@ -31,7 +31,10 @@ def app():
             "You have tightness in", st.session_state["tightness"],".  \n",
             "Your tightness intensity is ",st.session_state["tightness_intensity"],".  \n",
             "Your current tightness location is ", st.session_state["tightness_location"][0],".  \n",
-            "Your diet style is ",st.session_state["diet_style"]
+            "Your diet style is ",st.session_state["diet_style"],".  \n",
+            "How many meals you eat per day",st.session_state["cnom"],".  \n",
+            "What are these meals",st.session_state["cnom_detail"]
+
             
             )
 
