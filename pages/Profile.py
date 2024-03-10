@@ -12,7 +12,6 @@ def app():
     thresholds_values_dict = {147: {'range': (41.4, 52.3), 'median': 46.85},149: {'range': (42.8, 54.1), 'median': 48.45},152: {'range': (44.1, 56.0), 'median': 50.05},154: {'range': (45.5, 57.8), 'median': 51.65},157: {'range': (47.3, 59.6), 'median': 53.45},159: {'range': (48.7, 61.4), 'median': 55.05},162: {'range': (50.0, 63.7), 'median': 56.85},164: {'range': (51.9, 65.5), 'median': 58.7},167: {'range': (53.7, 67.3), 'median': 60.5},169: {'range': (55.0, 69.6), 'median': 62.3},172: {'range': (56.9, 71.9), 'median': 64.4},174: {'range': (58.2, 73.7), 'median': 65.95},177: {'range': (60.0, 76.0), 'median': 68.0},179: {'range': (61.9, 78.2), 'median': 70.05},182: {'range': (63.7, 80.5), 'median': 72.1},185: {'range': (65.5, 82.8), 'median': 74.15},187: {'range': (67.3, 84.6), 'median': 75.95},190: {'range': (69.1, 87.3), 'median': 78.2},192: {'range': (71.0, 89.6), 'median': 80.3}}
 
 
-    st.markdown("#Summary Health Status")
 
     if ["bmi"] in st.session_state:
         current_bmi = st.session_state["bmi"]
@@ -85,6 +84,20 @@ def app():
     
     st.session_state["weight_change_category"] = current_weight_change_category
 
+
+     if ["healthy_weight_median"] in st.session_state:
+        current_healthy_weight_median = st.session_state["healthy_weight_median"]
+
+    else:
+        # Your height for comparison
+
+        # Loop through the dictionary to find the matching range and median based on your height
+        for threshold, details in thresholds_values_dict.items():
+            if st.session_state['height'] <= threshold:
+                current_healthy_weight_median = details['median']
+                break
+        st.session_state["healthy_weight_median"] = current_healthy_weight_median
+
     
             
 
@@ -98,11 +111,16 @@ def app():
 
 
     
+    st.markdown("#Summary Health Status")
     st.write("Your BMI is ",int(current_bmi))
     st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
     st.write("Your Health Category according to BankaiFit is ", current_health_category)
     st.write("Your Ideal weight Range in KG",current_healthy_weight_range)
-    st.write("Your Body Tendency is ",current_weight_change_category)
+    st.write("Your Body is currently in Tendency of ",current_weight_change_category)
+
+    st.markdown("#North Star")
+    st.write("Your Ideal weight should be (in KG)",current_healthy_weight_median)
+
 
 
 
