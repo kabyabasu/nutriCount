@@ -41,8 +41,8 @@ def app():
             "What % of your total calories from Carb consumption (best guess)",st.session_state["dails_carbs"],"  \n",
             "What % of your total calories from fat consumption (best guess)",st.session_state["dails_fat"],"  \n",
             "What % of your total calories from Protein consumption (best guess)",st.session_state["dails_protein"],"  \n",
-            "Choose the food item or items to which you are allergic",st.session_state["allergens"],st.session_state["allergens"],"  \n",
-            "Choose the item or items that align with your dietary Observation ",st.session_state["diet_observation"]
+            "Choose the food item or items to which you are allergic",st.session_state["allergens"],st.session_state["allergens"][0],"  \n",
+            "Choose the item or items that align with your dietary Observation ",st.session_state["diet_observation"][0]
 
 
             )
