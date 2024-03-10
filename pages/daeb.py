@@ -80,7 +80,7 @@ def app():
                 "High Fat Intake",
             ],
         )
-        st.form_submit_button(submit To BankaiFit)
+        st.form_submit_button("submit To BankaiFit")
 
 
 app()
