@@ -78,13 +78,13 @@ def app():
             st.session_state["dails_protein"] = current_dails_protein
 
         
-        if "allergens" in st.session_state:
+        if ["allergens"] in st.session_state:
             current_allergens = st.session_state["allergens"]
         else:
             current_allergens = st.multiselect("Choose the food item or items to which you are allergic",["None", "Milk", "Egg", "Fish", "Shellfish", "Peanuts", "Wheat", "Soy"])
             st.session_state["allergens"] = current_allergens
             
-        if "diet_observation" in st.session_state:
+        if ["diet_observation"] in st.session_state:
             current_diet_observation = st.session_state["diet_observation"]
         else:
             current_diet_observation = st.multiselect("Choose the item or items that align with your dietary Observation ",["None","Primarily Carbs","High Sugar Consumption","Lack of Protein","Erratic Meal Times","Insufficient Balance of Macros","Balanced Meals","Unnecessary supplements","High Fat Intake",],)
