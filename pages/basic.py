@@ -122,7 +122,7 @@ def wt():
             current_occupation = st.session_state["occupation"]
 
         else:
-            current_occupation = st.selectbox("Pick your occupation",["Homebody (Housepersons/maids/Stay at home parents)","Student"])
+            current_occupation = st.selectbox("Pick your occupation",["Homebody Housepersons/maids/Stay at home parents","Student"])
             st.session_state["occupation"] = current_occupation
 
         if "duration_of_workday" in st.session_state:
