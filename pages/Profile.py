@@ -9,23 +9,8 @@ def app():
     #col1,col2 = st.columns([1,1])
 
     raw_sources = ["Severe Thinness","Moderate Thinness","Mild Thinness","Normal","Overweight","Obese Class I","Obese Class II","Obese Class III"]
-    
-    thresholds_height = [
-        147, 149, 152, 154, 157, 159, 162, 164, 167, 169, 172, 174, 177, 179, 182, 185, 187, 190, 192
-    ]
-    
-    # Defining return values (ranges) and calculating medians
-    return_values = [
-        (41.4, 52.3), (42.8, 54.1), (44.1, 56.0), (45.5, 57.8), (47.3, 59.6),
-        (48.7, 61.4), (50.0, 63.7), (51.9, 65.5), (53.7, 67.3), (55.0, 69.6),
-        (56.9, 71.9), (58.2, 73.7), (60.0, 76.0), (61.9, 78.2), (63.7, 80.5),
-        (65.5, 82.8), (67.3, 84.6), (69.1, 87.3), (71.0, 89.6)
-    ]
-    
-    # Creating a list of tuples, each with a threshold, return range, and median
-    thresholds_and_values = [
-        (thresholds_height, val, (val[0] + val[1]) / 2) for threshold, val in zip(thresholds_height, return_values)
-    ]
+    thresholds_values_dict = {147: {'range': (41.4, 52.3), 'median': 46.85},149: {'range': (42.8, 54.1), 'median': 48.45},152: {'range': (44.1, 56.0), 'median': 50.05},154: {'range': (45.5, 57.8), 'median': 51.65},157: {'range': (47.3, 59.6), 'median': 53.45},159: {'range': (48.7, 61.4), 'median': 55.05},162: {'range': (50.0, 63.7), 'median': 56.85},164: {'range': (51.9, 65.5), 'median': 58.7},167: {'range': (53.7, 67.3), 'median': 60.5},169: {'range': (55.0, 69.6), 'median': 62.3},172: {'range': (56.9, 71.9), 'median': 64.4},174: {'range': (58.2, 73.7), 'median': 65.95},177: {'range': (60.0, 76.0), 'median': 68.0},179: {'range': (61.9, 78.2), 'median': 70.05},182: {'range': (63.7, 80.5), 'median': 72.1},185: {'range': (65.5, 82.8), 'median': 74.15},187: {'range': (67.3, 84.6), 'median': 75.95},190: {'range': (69.1, 87.3), 'median': 78.2},192: {'range': (71.0, 89.6), 'median': 80.3}}
+
 
     st.markdown("#Summary Health Status")
 
@@ -70,9 +55,13 @@ def app():
         current_healthy_weight_range = st.session_state["healthy_weight_range"]
 
     else:
-        for thresholds_height, value_range, median in thresholds_and_values:
-            if st.session_state['height'] <= thresholds_height:
-                current_healthy_weight_range = value_range
+        # Your height for comparison
+
+        # Loop through the dictionary to find the matching range and median based on your height
+        for threshold, details in thresholds_values_dict.items():
+            if st.session_state['height'] <= threshold:
+                current_healthy_weight_range = details['range']
+                break
         st.session_state["healthy_weight_range"] = current_healthy_weight_range
             
 

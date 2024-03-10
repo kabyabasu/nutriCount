@@ -115,7 +115,7 @@ def wt():
             current_height = st.session_state["height"]
 
         else:
-            current_height = st.slider("What is your height in CM", 120, 190, value=130)
+            current_height = st.slider("What is your height in CM", 147, 191, value=130)
             st.session_state["height"] = current_height
 
         if ["occupation"] in st.session_state:
