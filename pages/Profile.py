@@ -25,8 +25,8 @@ def app():
 
     
     st.write("Your BMI is ",int(current_bmi))
-    st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"])
-    st.write("Your test case BMI Prime is ",st.session_state["bmi"])
+    st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
+    st.write("Your test case BMI is ",st.session_state["bmi"])
 
 
 
