@@ -63,6 +63,29 @@ def app():
                 current_healthy_weight_range = details['range']
                 break
         st.session_state["healthy_weight_range"] = current_healthy_weight_range
+
+    if ["weight_change_category"] in st.session_state:
+        current_weight_change_category = st.session_state["weight_change_category"]
+
+    else:
+        if current_bmi <= -500:
+            current_weight_change_category = "Rapid Weight Loss"
+        elif current_bmi <= -250:
+            current_weight_change_category = "Easy Weight Loss"
+        elif current_bmi <= -100:
+            current_weight_change_category = "Slow Weight Loss"
+        elif current_bmi == 0:
+            current_weight_change_category = "Maintains Weight"
+        elif current_bmi <= 100:
+            current_weight_change_category = "Slow Weight Gain"
+        elif current_bmi <= 250:
+            current_weight_change_category = "Easy Weight Gain"
+        else:
+            current_weight_change_category = "Rapid Weight Gain"
+    
+    st.session_state["weight_change_category"] = current_weight_change_category
+
+    
             
 
         
@@ -78,7 +101,8 @@ def app():
     st.write("Your BMI is ",int(current_bmi))
     st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
     st.write("Your Health Category according to BankaiFit is ", current_health_category)
-    st.write("Your ideal weight Range",current_healthy_weight_range)
+    st.write("Your Ideal weight Range in KG",current_healthy_weight_range)
+    st.write("Your Body Tendency is ",current_weight_change_category)
 
 
 
