@@ -170,7 +170,7 @@ def wt():
             current_breastfeeding = session_state["breastfeeding"]
         else:
             current_breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"])
-            st.selectbox["breastfeeding"] = current_breastfeeding
+            st.session_state["breastfeeding"] = current_breastfeeding
 
         st.form_submit_button("Submit")
 
