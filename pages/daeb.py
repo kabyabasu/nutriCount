@@ -44,7 +44,7 @@ def app():
         # ci = st.number_input(
         #     "How Many Cups of Coffee you drink per day", min_value=0, max_value=10
         # )
-        if "ci" in st.session_state:
+        if ["ci"] in st.session_state:
             current_ci = st.session_state["ci"]
         else:
             current_ci = st.number_input("How Many Cups of Coffee you drink per day", min_value=0, max_value=10)
