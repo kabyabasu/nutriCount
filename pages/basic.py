@@ -108,7 +108,7 @@ def wt():
         if ["age"] in st.session_state:
             current_age = session_state["age"]
         else:
-            current_age = st.number_input("What is your Age?",5,90,value=30)
+            current_age = st.number_input("What is your Age?",1,90,value=30)
             st.session_state["age"] = current_age
 
         if ["weight"] in st.session_state:
@@ -122,7 +122,7 @@ def wt():
             current_height = st.session_state["height"]
 
         else:
-            current_height = st.slider("What is your height in CM", 147, 191, value=130)
+            current_height = st.slider("What is your height in CM", 147, 191, value=170)
             st.session_state["height"] = current_height
 
         if ["occupation"] in st.session_state:

@@ -12,6 +12,8 @@ def app():
     thresholds_values_dict = {147: {'range': (41.4, 52.3), 'median': 46.85},149: {'range': (42.8, 54.1), 'median': 48.45},152: {'range': (44.1, 56.0), 'median': 50.05},154: {'range': (45.5, 57.8), 'median': 51.65},157: {'range': (47.3, 59.6), 'median': 53.45},159: {'range': (48.7, 61.4), 'median': 55.05},162: {'range': (50.0, 63.7), 'median': 56.85},164: {'range': (51.9, 65.5), 'median': 58.7},167: {'range': (53.7, 67.3), 'median': 60.5},169: {'range': (55.0, 69.6), 'median': 62.3},172: {'range': (56.9, 71.9), 'median': 64.4},174: {'range': (58.2, 73.7), 'median': 65.95},177: {'range': (60.0, 76.0), 'median': 68.0},179: {'range': (61.9, 78.2), 'median': 70.05},182: {'range': (63.7, 80.5), 'median': 72.1},185: {'range': (65.5, 82.8), 'median': 74.15},187: {'range': (67.3, 84.6), 'median': 75.95},190: {'range': (69.1, 87.3), 'median': 78.2},192: {'range': (71.0, 89.6), 'median': 80.3}}
 
 
+    
+
 
     if ["bmi"] in st.session_state:
         current_bmi = st.session_state["bmi"]
@@ -140,6 +142,34 @@ def app():
 
         st.session_state["recommended_calorific_intake"] = current_recommended_calorific_intake
 
+    if ["minimum_water_intake_in_litres"] in st.session_state:
+        current_minimum_water_intake_in_litres = st.session_state["minimum_water_intake_in_litres"]
+
+    else:
+        if st.session_state["pregnant"] == "Yes":
+            current_minimum_water_intake_in_litres = 2.5
+        elif st.session_state["breastfeeding"] == "Yes":
+            current_minimum_water_intake_in_litres = 3
+        elif st.session_state["gender"] == "Male" and st.session_state["age"] >= 19:
+            current_minimum_water_intake_in_litres = 3
+        elif st.session_state["gender"] == "Female" and st.session_state["age"] >= 19:
+            current_minimum_water_intake_in_litres = 2
+        elif st.session_state["age"] in range(14, 19):
+            current_minimum_water_intake_in_litres = 2.5
+        elif st.session_state["age"] in range(9, 14):
+            current_minimum_water_intake_in_litres = 2
+        elif st.session_state["age"] in range(4, 9):
+            current_minimum_water_intake_in_litres = 1.2
+        elif st.session_state["age"] in range(1, 4):
+            current_minimum_water_intake_in_litres = 1
+        
+        st.session_state["minimum_water_intake_in_litres"] = current_minimum_water_intake_in_litres
+
+
+
+
+
+
 
     
 
@@ -170,6 +200,7 @@ def app():
     st.write("Required minimum weight Change",current_required_min_weight_change)
     st.write("Your Maintainance Calorific Intake is ", current_maintainance_calorific_intake)
     st.write("Your Recommended Calorific Intake",current_recommended_calorific_intake)
+    st.write("Your Minimum Water Intake In Litres", current_minimum_water_intake_in_litres)
 
 
 
