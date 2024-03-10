@@ -71,7 +71,7 @@ def app():
 
     else:
         for thresholds_height, value_range, median in thresholds_and_values:
-            if st.session_state['height'] <= threshold:
+            if st.session_state['height'] <= thresholds_height:
                 current_healthy_weight_range = value_range
         st.session_state["healthy_weight_range"] = current_healthy_weight_range
             
