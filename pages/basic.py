@@ -157,13 +157,13 @@ def wt():
             current_gender = session_state["gender"]
         else:
             current_gender = st.selectbox("Insert Your Gender", ["Male", "Female"])
-            st.selectbox["gender"] = current_gender
+            st.session_state["gender"] = current_gender
 
         if ["pregnant"] in st.session_state:
             current_pregnant = session_state["pregnant"]
         else:
             current_pregnant = st.selectbox("Are You Pregnant", ["No", "Yes"])
-            st.selectbox["pregnant"] = current_pregnant
+            st.session_state["pregnant"] = current_pregnant
 
     
         if ["breastfeeding"] in st.session_state:
