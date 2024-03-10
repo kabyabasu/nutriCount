@@ -30,7 +30,7 @@ def app():
             "Your current weekness location is ", st.session_state["weekness_location"][0],".  \n",
             "You have tightness in", st.session_state["tightness"],".  \n",
             "Your tightness intensity is ",st.session_state["tightness_intensity"],".  \n",
-            "Your current tightness location is ", st.session_state["tightness_location"][0]",".  \n",
+            "Your current tightness location is ", st.session_state["tightness_location"][0],".  \n",
             
             )
 
