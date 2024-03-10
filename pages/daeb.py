@@ -35,7 +35,7 @@ def app():
             current_cnom_detail = st.text_input("What are these meals", max_chars=130, help="breakfast")
             st.session_state["cnom_detail"] = current_cnom_detail
 
-        if "first_major_meal" in st.session_state:
+        if ["first_major_meal"] in st.session_state:
             current_first_major_meal = st.session_state["first_major_meal"]
         else:
             current_first_major_meal = st.selectbox("What is your first major meal of the Day",["Breakfast","Morning Snack","Brunch","Lunch","Afternoon Snack","Evening Snack","Dinner"])
