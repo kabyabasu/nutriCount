@@ -27,7 +27,7 @@ def app():
             "Your current tingling location is ", st.session_state["tingling_location"][0],
             "You have weekness in", st.session_state["weekness"],
             "Your weekness intensity is ",st.session_state["weekness_intensity"],
-            "Your current weekness location is ", st.session_state["weekness_location"][0]
+            "Your current weekness location is ", st.session_state["weekness_location"][0],
             "You have tightness in", st.session_state["tightness"],
             "Your tightness intensity is ",st.session_state["tightness_intensity"],
             "Your current tightness location is ", st.session_state["tightness_location"][0]
