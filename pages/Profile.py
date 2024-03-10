@@ -36,7 +36,15 @@ def app():
             "What are these meals",st.session_state["cnom_detail"],".  \n",
             "what is your first meal", st.session_state["first_major_meal"],"  \n",
             "How many cups of coffee you drink", st.session_state["ci"],"  \n",
-            "How many Lt. of water you drink" ,st.session_state["water_intake"],"  \n" 
+            "How many Lt. of water you drink" ,st.session_state["water_intake"],"  \n" ,
+            "What is your daily Cal Consumption (best guess)",st.session_state["daily_calories"],"  \n",
+            "What % of your total calories from Carb consumption (best guess)",st.session_state["dails_carbs"],"  \n",
+            "What % of your total calories from fat consumption (best guess)",st.session_state["dails_fat"],"  \n",
+            "What % of your total calories from Protein consumption (best guess)",st.session_state["dails_protein"],"  \n",
+            "Choose the food item or items to which you are allergic",st.session_state["allergens"],st.session_state["allergens"],"  \n",
+            "Choose the item or items that align with your dietary Observation ",st.session_state["diet_observation"]
+
+
             )
 
     except:
