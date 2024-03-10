@@ -65,7 +65,7 @@ def app():
             current_otie = st.session_state["otie"]
         else:
             current_otie = st.selectbox(
-                "Are you Ready to Incorporate Exercise in your Daily routine", ["Yes", "No"], key='otie'  # Unique key for widget
+                "Are you Ready to Incorporate Exercise in your Daily routine", ["Yes", "No"] # Unique key for widget
             )
             st.session_state["otie"] = current_otie
 
@@ -73,7 +73,7 @@ def app():
         if ["supply"] in st.session_state:
             current_supply = st.session_state["supply"]
         else:
-            current_supply = st.selectbox("Do you take any health supplements", ["Yes", "No"], key='supply')  # Unique key for widget
+            current_supply = st.selectbox("Do you take any health supplements", ["Yes", "No"])  # Unique key for widget
             st.session_state["supply"] = current_supply
 
 
