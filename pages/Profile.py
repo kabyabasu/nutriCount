@@ -1,13 +1,16 @@
 import streamlit as st
 from st_pages import add_page_title
-#from algo.shs import new_weigh
+from algo.shs import bm
 import streamlit_extras as ste
 add_page_title()
 
 # for k, v in st.session_state.items():
 #     st.session_state[k] = v
 def app():
-    #col1,col2 = st.columns([])
+    col1,col2 = st.columns([1,1])
+    col1.write("Your BMI is " bm)
+
+
     # try:
     
     # st.write(
@@ -58,7 +61,6 @@ def app():
     #     "Are you Ready to Incorporate Exercise in your Daily routine",st.session_state["otie"],"  \n",
     #     "Do you take any health supplements",st.session_state["supply"],"  \n"
 
-    st.containner
 
 
 
