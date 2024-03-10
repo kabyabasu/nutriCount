@@ -13,6 +13,7 @@ def app():
     #bmi = bm(st.session_state["height"],st.session_state["weight"])
 
     st.write("Your BMI is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2))
+    st.write("Your BMI Prime is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25)
 
 
     # try:
