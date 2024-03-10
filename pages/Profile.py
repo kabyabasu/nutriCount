@@ -8,8 +8,8 @@ add_page_title()
 def app():
     #col1,col2 = st.columns([1,1])
     st.markdown("#Summary Health Status")
-    #b= bm(st.session_state["height"],st.session_state["weight"])
-    #bmi = bm(st.session_state["height"],st.session_state["weight"])
+    raw_sources = ["Severe Thinness","Moderate Thinness","Mild Thinness","Normal","Overweight","Obese Class I","Obese Class II","Obese Class III"]
+
     if ["bmi"] in st.session_state:
         current_bmi = st.session_state["bmi"]
     else:
@@ -25,8 +25,9 @@ def app():
 
     if ["health_category"] in st.session_state:
         current_health_category = st.session_state["health_category"]
+
     else:
-        
+    
         if current_bmi < 16:
              current_health_category = raw_sources[0]
         elif current_bmi < 17:
