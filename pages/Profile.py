@@ -18,7 +18,8 @@ def app():
             "Your current number of work hour is", st.session_state['duration_of_workday'],
             "Your Gender is ",st.session_state['gender'],
             "You are", st.session_state["pregnant"], "pregnent",
-            "You are", st.session_state["breastfeeding"], "breastfeeding"
+            "You are", st.session_state["breastfeeding"], "breastfeeding",
+            "You have pain",st.session_state["pain"]
 
             )
 
