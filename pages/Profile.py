@@ -118,11 +118,11 @@ def app():
 
     else:
         if st.session_state["gender"] == "Male":
-            current_maintainance_calorific_intake = (66.5 + (13.75 * st.session_state['weight']) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * current_lifeStyle_value
+            current_maintainance_calorific_intake = (66.5 + (13.75 * st.session_state['weight']) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
 
         else:
 
-            current_maintainance_calorific_intake = (655.1 + (9.56 * st.session_state['weight']) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * current_lifeStyle_value
+            current_maintainance_calorific_intake = (655.1 + (9.56 * st.session_state['weight']) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
 
         st.session_state["maintainance_calorific_intake"] = current_maintainance_calorific_intake
 
