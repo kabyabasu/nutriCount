@@ -34,8 +34,7 @@ def app():
             "Your diet style is ",st.session_state["diet_style"],".  \n",
             "How many meals you eat per day",st.session_state["cnom"],".  \n",
             "What are these meals",st.session_state["cnom_detail"]
-
-            
+            "what is your first meal", st.session_state["first_major_meal"]            
             )
 
     except:
