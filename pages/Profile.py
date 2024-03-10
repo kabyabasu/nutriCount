@@ -12,7 +12,7 @@ def app():
     #b= bm(st.session_state["height"],st.session_state["weight"])
     #bmi = bm(st.session_state["height"],st.session_state["weight"])
 
-    st.write("Your BMI is ",(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2))
+    st.write("Your BMI is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2))
 
 
     # try:
