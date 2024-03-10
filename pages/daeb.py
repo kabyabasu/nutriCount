@@ -41,9 +41,15 @@ def app():
             current_first_major_meal = st.selectbox("What is your first major meal of the Day",["Breakfast","Morning Snack","Brunch","Lunch","Afternoon Snack","Evening Snack","Dinner"])
             st.session_state["first_major_meal"] = current_first_major_meal
 
-        ci = st.number_input(
-            "How Many Cups of Coffee you drink per day", min_value=0, max_value=10
-        )
+        # ci = st.number_input(
+        #     "How Many Cups of Coffee you drink per day", min_value=0, max_value=10
+        # )
+        if "ci" in st.session_state:
+            current_ci = st.session_state["ci"]
+        else:
+            current_ci = st.number_input("How Many Cups of Coffee you drink per day", min_value=0, max_value=10)
+            st.session_state["ci"] = current_ci
+
         water_intake = st.number_input("How many Liters of Water you drink in a day", 1, 6)
         daily_calories = st.slider(
             "What is your daily Cal Consumption (best guess)", 500, 5000, value=3500
