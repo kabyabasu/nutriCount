@@ -31,6 +31,7 @@ def app():
             "You have tightness in", st.session_state["tightness"],".  \n",
             "Your tightness intensity is ",st.session_state["tightness_intensity"],".  \n",
             "Your current tightness location is ", st.session_state["tightness_location"][0],".  \n",
+            "Your diet style is ",st.session_state["diet_style"]
             
             )
 
