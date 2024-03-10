@@ -120,6 +120,8 @@ def app():
 
     st.markdown("#North Star")
     st.write("Your Ideal weight should be (in KG)",current_healthy_weight_median)
+    st.write("Required weight Change", st.session_state['weight']-current_healthy_weight_median)
+
 
 
 
