@@ -38,3 +38,21 @@ path = "./pages/Profile.py"
 name = "Profile"
 icon = "🧰"
 in_section = false
+
+[[pages]]
+path = "./pages/recomandation.py"
+name = "BankaiFit Recommendation"
+icon = "🧰"
+in_section = false
+
+[[pages]]
+path = "./pages/Food_tracker.py"
+name = "Track What You Eat"
+icon = "🧰"
+in_section = false
+
+[[pages]]
+path = "./pages/Exercise_tracker.py"
+name = "Track Your Exrcise"
+icon = "🧰"
+in_section = false
