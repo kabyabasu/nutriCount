@@ -127,12 +127,12 @@ def wt():
                 [
                     "Homebody (Housepersons/maids/Stay at home parents)",
                     "Student",
-                    "Desk Worker (Any job including long duration of stationary sitting/standing)",
-                    "Field Worker (Any job that requires manual practice)",
-                    "Professional Athletes",
-                    "Retired Desk Worker",
-                    "Retired Field Worker",
-                    "Retired Athlete"
+                    # "Desk Worker (Any job including long duration of stationary sitting/standing)",
+                    # "Field Worker (Any job that requires manual practice)",
+                    # "Professional Athletes",
+                    # "Retired Desk Worker",
+                    # "Retired Field Worker",
+                    # "Retired Athlete"
                 ]
             )
             st.session_state["occupation"] = current_occupation
