@@ -161,11 +161,11 @@ def wt():
             current_breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"])
             st.session_state["breastfeeding"] = current_breastfeeding
 
-        st.form_submit_button("Submit")
+        st.form_submit_button("Submit To BankaiFit")
 
     # if ["heigh"] in st.session_state:
 
-    st.write(st.session_state.weight)
+   # st.write(st.session_state.weight)
 
 
 wt()

@@ -240,7 +240,7 @@ def app():
             st.session_state["tightness_location"] = current_tightness_location
   
         
-        st.form_submit_button("submit")
+        st.form_submit_button("Submit To BankaiFit")
 
 
 app()
