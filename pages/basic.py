@@ -132,7 +132,7 @@ def wt():
                     "Professional Athletes",
                     "Retired Desk Worker",
                     "Retired Field Worker",
-                    "Retired Athlete",
+                    "Retired Athlete"
                 ]
             )
             st.session_state["occupation"] = current_occupation
@@ -148,7 +148,7 @@ def wt():
                     "Light (Daily Average of up to 4 Hours)",
                     "Moderate (Up to 8 Hours)",
                     "Heavy (10+ Hours)",
-                    "Walking Zombie (12+ Hours)",
+                    "Walking Zombie (12+ Hours)"
                 ]
             )
 
