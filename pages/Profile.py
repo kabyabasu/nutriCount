@@ -46,6 +46,12 @@ def app():
             "Your primary Goal",st.session_state["g1"],"  \n",
             "Your secondary Goal",st.session_state["g2"],"  \n",
             "Your Teritary Goal",st.session_state["g3"],"  \n",
+            "Do you have any of these medical Conditions",st.session_state["mc"][0],"  \n",
+            "If you have any medical condition that is not mentioned above, please give details",st.session_state["mc_add"],"  \n",
+            "Do you have any of the following Special Conditions",st.session_state["md"],"  \n",
+            "If you have any Special condition that is not mentioned above, please give details",st.session_state["md_ad"],"  \n"
+
+
 
 
             )
