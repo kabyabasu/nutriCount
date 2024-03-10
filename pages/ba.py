@@ -175,21 +175,8 @@ def app():
             ],
             default="No Tightness or Stiffness",
         )
-        return (
-            pain,
-            pain_intensity,
-            pain_location,
-            tingling,
-            tingling_intensity,
-            tingling_location,
-            weekness,
-            weekness_intensity,
-            weekness_location,
-            tightness,
-            tightness_intensity,
-            tightness_location
-
-        )
+  
+        
         st.form_submit_button("submit")
 
 
