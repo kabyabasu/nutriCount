@@ -96,7 +96,7 @@ def app():
             current_tingling_location = st.session_state["tingling_location"]
 
         else:
-            tingling_location = st.multiselect(
+            current_tingling_location = st.multiselect(
                 "Where do you have Tingling or Numbness in the body",
                 [
                     "No Tingling or Numbness",
