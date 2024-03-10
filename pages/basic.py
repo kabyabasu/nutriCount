@@ -118,12 +118,19 @@ def wt():
             current_height = st.slider("What is your height in CM", 120, 190, value=130)
             st.session_state["height"] = current_height
 
-        if "occupation" in st.session_state:
+        if ["occupation"] in st.session_state:
             current_occupation = st.session_state["occupation"]
 
         else:
-            current_occupation = st.selectbox("Pick your occupation",["Homebody Housepersons/maids/Stay at home parents","Student"])
+            current_occupation = st.selectbox("Pick your Occupdation", ["working","Student"])
             st.session_state["occupation"] = current_occupation
+
+        # if "occupation" in st.session_state:
+        #     current_occupation = st.session_state["occupation"]
+
+        # else:
+        #     current_occupation = st.selectbox("Pick your occupation",["Homebody Housepersons/maids/Stay at home parents","Student"])
+        #     st.session_state["occupation"] = current_occupation
 
         if "duration_of_workday" in st.session_state:
             current_duration_of_workday = st.session_state["duration_of_workday"]
