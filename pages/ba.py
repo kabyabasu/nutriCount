@@ -150,7 +150,7 @@ def app():
                     "Life has no meaning (Need immediate relief)",
                 ],
             )
-            st.session_state["weekness_intensity"] current_weekness_intensity
+            st.session_state["weekness_intensity"]= current_weekness_intensity
 
         if ["weekness_location"] in st.session_state:
             current_weekness_location = st.session_state["weekness_location"]
