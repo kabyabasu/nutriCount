@@ -1,6 +1,8 @@
 import streamlit as st
 from st_pages import add_page_title
 import streamlit_extras as ste
+import math
+
 add_page_title()
 
 # for k, v in st.session_state.items():
@@ -166,6 +168,15 @@ def app():
         st.session_state["minimum_water_intake_in_litres"] = current_minimum_water_intake_in_litres
 
 
+    if ["healthy_water_intake_in_litres"] in st.session_state:
+        current_healthy_water_intake_in_litres = st.session_state["healthy_water_intake_in_litres"]
+
+    else:
+        current_healthy_water_intake_in_litres = math.ceil(current_minimum_water_intake_in_litres * 1.15 * 10) / 10
+        st.session_state["healthy_water_intake_in_litres"] = current_healthy_water_intake_in_litres
+
+
+
 
 
 
@@ -201,6 +212,7 @@ def app():
     st.write("Your Maintainance Calorific Intake is ", current_maintainance_calorific_intake)
     st.write("Your Recommended Calorific Intake",current_recommended_calorific_intake)
     st.write("Your Minimum Water Intake In Litres", current_minimum_water_intake_in_litres)
+    st.write("Your healthy Water Intake in Litres",current_healthy_water_intake_in_litres)
 
 
 
