@@ -15,11 +15,17 @@ def app():
     else:
         current_bmi = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)
         st.session_state["bmi"] = current_bmi
+
+    if ["bmi_Prime"] in st.session_state:
+        current_bmi_prime = st.session_state["bmi_prime"]
+    else:
+        current_bmi_prime = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25
+        st.session_state["bmi_prime"] = current_bmi_prime
     
 
     
-    st.write("Your BMI is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2))
-    st.write("Your BMI Prime is ",int(st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25)
+    st.write("Your BMI is ",int(current_bmi)
+    st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"])
     st.write("Your test case BMI Prime is ",st.session_state["bmi"])
 
 
