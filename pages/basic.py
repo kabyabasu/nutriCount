@@ -108,7 +108,7 @@ def wt():
         if ["age"] in st.session_state:
             current_age = session_state["age"]
         else:
-            current_age = st.number_input("What is your Age?",5,90)
+            current_age = st.number_input("What is your Age?",5,90,value=30)
             st.session_state["age"] = current_age
 
         if ["weight"] in st.session_state:
