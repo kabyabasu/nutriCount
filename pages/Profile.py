@@ -21,12 +21,45 @@ def app():
     else:
         current_bmi_prime = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25
         st.session_state["bmi_prime"] = current_bmi_prime
+
+
+    if ["health_category"] in st.session_state:
+        current_health_category = st.session_state["health_category"]
+    else:
+        
+        if current_bmi < 16:
+             current_health_category = raw_sources[0]
+        elif current_bmi < 17:
+            current_health_category = raw_sources[1]
+        elif current_bmi < 18.5:
+            current_health_category = raw_sources[2]
+        elif current_bmi < 25:
+            current_health_category = raw_sources[3]
+        elif current_bmi < 30:
+            current_health_category = raw_sources[4]
+        elif current_bmi < 35:
+            current_health_category = raw_sources[5]
+        elif current_bmi < 40:
+            current_health_category = raw_sources[6]
+        else:
+            current_health_category = raw_sources[7]
+        
+        st.session_state["health_category"] = current_health_category
+
     
+
+
+
 
     
     st.write("Your BMI is ",int(current_bmi))
     st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
-    st.write("Your test case BMI is ",st.session_state["bmi"])
+    st.write("Yor heath type according to BankaiFit is ", current_health_category)
+
+
+
+
+    
 
 
 
