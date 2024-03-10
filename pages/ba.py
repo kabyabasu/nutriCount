@@ -33,36 +33,46 @@ def app():
                 ],
             )
             st.session_state["pain_intensity"] = current_pain_intensity
-        pain_location = st.multiselect(
-            "Where do you have Pain in the body",
-            [
-                "No Pain",
-                "Neck",
-                "Shoulder",
-                "Arm",
-                "Forearm",
-                "Elbow",
-                "Wrist + Hand",
-                "Upper Back",
-                "Lower Back",
-                "Hip & Thigh",
-                "Knee",
-                "Shin",
-                "Ankle",
-                "Foot",
-                "Chest",
-                "Groin",
-                "Stomach",
-            ],
-            default="No Pain",
-        )
-        tingling = st.selectbox(
-            "Do you have Tingling or Numbness in the body",
-            [
-                "No",
-                "Yes",
-            ],
-        )
+
+        if ["pain_location"] in st.session_state:
+            current_pain_location = st.session_state["pain_location"]
+        else:
+            current_pain_location = st.multiselect(
+                "Where do you have Pain in the body",
+                [
+                    "No Pain",
+                    "Neck",
+                    "Shoulder",
+                    "Arm",
+                    "Forearm",
+                    "Elbow",
+                    "Wrist + Hand",
+                    "Upper Back",
+                    "Lower Back",
+                    "Hip & Thigh",
+                    "Knee",
+                    "Shin",
+                    "Ankle",
+                    "Foot",
+                    "Chest",
+                    "Groin",
+                    "Stomach",
+                ],
+                default="No Pain",
+            )
+            st.session_state["pain_location"] = current_pain_location
+        if ["tingling"] in st.session_state:
+            current_tingling = st.session_state["tingling"]
+        else:
+            current_tingling = st.selectbox(
+                "Do you have Tingling or Numbness in the body",
+                [
+                    "No",
+                    "Yes",
+                ],
+            )
+            st.session_state["tingling"] = current_tingling
+            
         tingling_intensity = (
             st.selectbox(
                 "What is the intensity of Tingling or Numbness in the body",

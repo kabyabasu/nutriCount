@@ -20,8 +20,10 @@ def app():
             "You are", st.session_state["pregnant"], "pregnent",
             "You are", st.session_state["breastfeeding"], "breastfeeding",
             "You have pain",st.session_state["pain"],
-            "Your pain intesity is", st.session_state["pain_intensity"]
-
+            "Your pain intesity is", st.session_state["pain_intensity"],
+            "Your Pain Location is ", st.session_state["pain_location"],
+            "Your have tingling sension", st.session_state["tingling"]
+            
             )
 
     except:
