@@ -19,7 +19,8 @@ def app():
             "Your Gender is ",st.session_state['gender'],
             "You are", st.session_state["pregnant"], "pregnent",
             "You are", st.session_state["breastfeeding"], "breastfeeding",
-            "You have pain",st.session_state["pain"]
+            "You have pain",st.session_state["pain"],
+            "Your pain intesity is", st.session_state["pain_intensity"]
 
             )
 

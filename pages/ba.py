@@ -19,16 +19,20 @@ def app():
             )
             st.session_state["pain"] = current_pain
 
-        pain_intensity = st.selectbox(
-            "What is the intensity of Pain in the body",
-            [
-                "No Pain",
-                "Mild (It doesn't bother me much but I feel it)",
-                "Moderate  (Feel it everday but I manage)",
-                "Severe (Daily activities are affected)",
-                "Life has no meaning (Need immediate relief)",
-            ],
-        )
+        if ["pain_intensity"] in st.session_state:
+            current_pain_intensity = st.session_state["pain_intensity"]
+        else:
+            current_pain_intensity = st.selectbox(
+                "What is the intensity of Pain in the body",
+                [
+                    "No Pain",
+                    "Mild (It doesn't bother me much but I feel it)",
+                    "Moderate  (Feel it everday but I manage)",
+                    "Severe (Daily activities are affected)",
+                    "Life has no meaning (Need immediate relief)",
+                ],
+            )
+            st.session_state["pain_intensity"] = current_pain_intensity
         pain_location = st.multiselect(
             "Where do you have Pain in the body",
             [
