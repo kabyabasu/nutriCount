@@ -7,8 +7,8 @@ add_page_title()
 # for k, v in st.session_state.items():
 #     st.session_state[k] = v
 def app():
-    col1,col2 = st.columns([1,1])
-    col1.write("Your BMI is ",bm)
+    #col1,col2 = st.columns([1,1])
+    st.write(bm)
 
 
     # try:
