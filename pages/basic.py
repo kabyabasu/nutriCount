@@ -122,7 +122,7 @@ def wt():
             current_occupation = st.session_state["occupation"]
 
         else:
-            current_occupation = st.selectbox("Pick your Occupdation", ["Homebody Housepersons","Student"])
+            current_occupation = st.selectbox("Pick your Occupdation", ["Homebody Housepersons","Student","Desk Worker (Any job including long duration of stationary sitting/standing)"])
             st.session_state["occupation"] = current_occupation
 
         # if "occupation" in st.session_state:
