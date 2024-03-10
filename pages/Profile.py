@@ -17,8 +17,8 @@ def app():
             "Your current Occupation is", st.session_state['occupation'],
             "Your current number of work hour is", st.session_state['duration_of_workday'],
             "Your Gender is ",st.session_state['gender'],
-            "You are", st.selectbox["pregnant"], "pregnent",
-            "You are", st.selectbox["breastfeeding"], "breastfeeding"
+            "You are", st.session_state["pregnant"], "pregnent",
+            "You are", st.session_state["breastfeeding"], "breastfeeding"
 
             )
 
