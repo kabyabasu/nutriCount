@@ -1,5 +1,6 @@
 import streamlit as st
 from st_pages import add_page_title
+from streamlit_extras.switch_page_button import switch_page
 
 add_page_title()
 
@@ -98,7 +99,11 @@ def app():
             )
             st.session_state["g3"] = current_g3
         
-        st.form_submit_button("Submit To BankaiFit")
+        submitted = st.form_submit_button("Submit To BankaiFit")
+        if submitted:
+            st.write("Thanks for Submitting Infomration")
+
+            switch_page("Profile")
 
 
 

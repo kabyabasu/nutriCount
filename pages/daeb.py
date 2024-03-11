@@ -1,5 +1,6 @@
 import streamlit as st
 from st_pages import add_page_title
+from streamlit_extras.switch_page_button import switch_page
 
 add_page_title()
 
