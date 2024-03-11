@@ -170,8 +170,8 @@ def wt():
 
         submitted = st.form_submit_button("Submit To BankaiFit")
         if submitted:
-            st.write("Thanks for Submitting Basic Infomration")
-            st.write("Please move to Diet and Eating Habits Section and provide information")
+            st.write("Thanks for Submitting Infomration")
+
             switch_page("Diet and Eating Habits")
 
 

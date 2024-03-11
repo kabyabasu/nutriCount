@@ -57,7 +57,11 @@ def app():
             current_md_ad = st.text_input("If you have any Special condition that is not mentioned above, please give details", max_chars=130, placeholder="None")
             st.session_state["md_ad"] = current_md_ad
 
-        st.form_submit_button("Submit To BankaiFit")
+        submitted = st.form_submit_button("Submit To BankaiFit")
+        if submitted:
+            st.write("Thanks for Submitting Infomration")
+
+            switch_page("Profile")
 
 
 #     mc = st.multiselect(

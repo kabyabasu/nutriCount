@@ -101,7 +101,11 @@ def app():
 
 
 
-        st.form_submit_button("Submit To BankaiFit")
+        submitted = st.form_submit_button("Submit To BankaiFit")
+        if submitted:
+            st.write("Thanks for Submitting Infomration")
+
+            switch_page("lifeStyle Condition")
 
     # current_lifeStyle = st.selectbox(
     #     "What is the level of your physical Activity",
@@ -137,6 +141,7 @@ def app():
     #     "Are you Ready to Incorporate Exercise in your Daily routine", ["Yes", "No"]
     # )
     # supply = st.selectbox("Do you take any health supplements", ["Yes", "No"])
+    
 
 
 app()

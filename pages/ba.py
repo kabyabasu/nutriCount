@@ -240,7 +240,11 @@ def app():
             st.session_state["tightness_location"] = current_tightness_location
   
         
-        st.form_submit_button("Submit To BankaiFit")
+        submitted = st.form_submit_button("Submit To BankaiFit")
+        if submitted:
+            st.write("Thanks for Submitting Infomration")
+
+            switch_page("life Style Information")
 
 
 app()

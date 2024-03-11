@@ -165,7 +165,11 @@ def app():
         #         "High Fat Intake",
         #     ],
         # )
-        st.form_submit_button("Submit To BankaiFit")
+        submitted = st.form_submit_button("Submit To BankaiFit")
+        if submitted:
+            st.write("Thanks for Submitting Infomration")
+
+            switch_page("Body Assessments")
 
 
 app()

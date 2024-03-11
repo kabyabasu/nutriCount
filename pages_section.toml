@@ -25,7 +25,7 @@ icon = "✏️"
 
 [[pages]]
 path = "./pages/lifestyle_condition.py"
-name = "lifeStyle Conditionn"
+name = "lifeStyle Condition"
 icon = "⚕️"
 
 [[pages]]
