@@ -223,13 +223,14 @@ def app():
 
     col1 ,col2 = st.columns(2,gap="large")
 
-    col1.header("A cat")
+    col1.header("Summary - Health Status")
     col1.write(f"Your BMI is {int(current_bmi)}")
     col1.write(f"Your BMI Prime is {int(st.session_state['bmi_prime'])}")
     col1.write(f"Your Health Category according to BankaiFit is {current_health_category}")
     col1.write(f"Your Ideal weight Range in KG {current_healthy_weight_range}")
     col1.write(f"Your Body is currently in Tendency of {current_weight_change_category}")
 
+    col2.header("Summary - North Star")
     col2.write(f"Your Ideal weight should be (in KG) {current_healthy_weight_median}")
     col2.write(f"Required weight Change {current_required_weight_change}")
     col2.write(f"Required minimum weight Change {current_required_min_weight_change}")
