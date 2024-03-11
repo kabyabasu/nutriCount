@@ -89,7 +89,8 @@ def app():
         else:
             current_diet_observation = st.multiselect("Choose the item or items that align with your dietary Observation ",["None","Primarily Carbs","High Sugar Consumption","Lack of Protein","Erratic Meal Times","Insufficient Balance of Macros","Balanced Meals","Unnecessary supplements","High Fat Intake",],)
             st.session_state["diet_observation"] = current_diet_observation
-
+        
+        current_diet_observation_values = 1
         if ["diet_observation_values"] in st.session_state:
             current_diet_observation_values = st.session_state["diet_observation_values"]
         else:
