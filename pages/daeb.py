@@ -169,7 +169,7 @@ def app():
         if submitted:
             st.write("Thanks for Submitting Infomration")
 
-            switch_page("Body Assessments")
+            switch_page("Body Assessment")
 
 
 app()
