@@ -244,7 +244,7 @@ def app():
         col2.write(f"Your Daily Protein Requirement in gms is {current_daily_protein_requirement_in_gms}")
 
     except:
-        st.write("Well! You need to finish Giving Us Input","Go Back to Profile Settings and Procvide Us required Input")
+        st.write("Oops! Looks like you left something behind. Quick, hop back to profile settings and fill in the blanks. We promise it's faster than finding a lost sock!")
 
 
 
