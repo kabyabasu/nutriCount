@@ -231,7 +231,7 @@ def app():
     col1.write(f"Your Body is currently in Tendency of {current_weight_change_category}")
 
     col2.header("Summary - North Star")
-    col2.write(f"Your Ideal weight should be (in KG) {current_healthy_weight_median}")
+    col2.write(f"Your Ideal weight should be (in KG) {round(current_healthy_weight_median,1)}")
     col2.write(f"Required weight Change {current_required_weight_change}")
     col2.write(f"Required minimum weight Change {current_required_min_weight_change}")
     col2.write(f"Your Maintenance Calorific Intake is {current_maintainance_calorific_intake}")
