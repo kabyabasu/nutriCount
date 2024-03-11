@@ -16,186 +16,186 @@ def app():
 
     
 
-
-    if ["bmi"] in st.session_state:
-        current_bmi = st.session_state["bmi"]
-    else:
-        current_bmi = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)
-        st.session_state["bmi"] = current_bmi
-
-    if ["bmi_Prime"] in st.session_state:
-        current_bmi_prime = st.session_state["bmi_prime"]
-    else:
-        current_bmi_prime = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25
-        st.session_state["bmi_prime"] = current_bmi_prime
-
-
-    if ["health_category"] in st.session_state:
-        current_health_category = st.session_state["health_category"]
-
-    else:
-    
-        if current_bmi < 16:
-             current_health_category = raw_sources[0]
-        elif current_bmi < 17:
-            current_health_category = raw_sources[1]
-        elif current_bmi < 18.5:
-            current_health_category = raw_sources[2]
-        elif current_bmi < 25:
-            current_health_category = raw_sources[3]
-        elif current_bmi < 30:
-            current_health_category = raw_sources[4]
-        elif current_bmi < 35:
-            current_health_category = raw_sources[5]
-        elif current_bmi < 40:
-            current_health_category = raw_sources[6]
+    try:
+        if ["bmi"] in st.session_state:
+            current_bmi = st.session_state["bmi"]
         else:
-            current_health_category = raw_sources[7]
+            current_bmi = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)
+            st.session_state["bmi"] = current_bmi
+
+        if ["bmi_Prime"] in st.session_state:
+            current_bmi_prime = st.session_state["bmi_prime"]
+        else:
+            current_bmi_prime = (st.session_state["height"]/ (st.session_state["weight"]/100) ** 2)/25
+            st.session_state["bmi_prime"] = current_bmi_prime
+
+
+        if ["health_category"] in st.session_state:
+            current_health_category = st.session_state["health_category"]
+
+        else:
         
-        st.session_state["health_category"] = current_health_category
-
-    if ["healthy_weight_range"] in st.session_state:
-        current_healthy_weight_range = st.session_state["healthy_weight_range"]
-
-    else:
-        # Your height for comparison
-
-        # Loop through the dictionary to find the matching range and median based on your height
-        for threshold, details in thresholds_values_dict.items():
-            if st.session_state['height'] <= threshold:
-                current_healthy_weight_range = details['range']
-                break
-        st.session_state["healthy_weight_range"] = current_healthy_weight_range
-
-    if ["weight_change_category"] in st.session_state:
-        current_weight_change_category = st.session_state["weight_change_category"]
-
-    else:
-        if current_bmi <= -500:
-            current_weight_change_category = "Rapid Weight Loss"
-        elif current_bmi <= -250:
-            current_weight_change_category = "Easy Weight Loss"
-        elif current_bmi <= -100:
-            current_weight_change_category = "Slow Weight Loss"
-        elif current_bmi == 0:
-            current_weight_change_category = "Maintains Weight"
-        elif current_bmi <= 100:
-            current_weight_change_category = "Slow Weight Gain"
-        elif current_bmi <= 250:
-            current_weight_change_category = "Easy Weight Gain"
-        else:
-            current_weight_change_category = "Rapid Weight Gain"
-    
-    st.session_state["weight_change_category"] = current_weight_change_category
-
-
-    if ["healthy_weight_median"] in st.session_state:
-        current_healthy_weight_median = st.session_state["healthy_weight_median"]
-
-    else:
-        # Your height for comparison
-
-        # Loop through the dictionary to find the matching range and median based on your height
-        for threshold, details in thresholds_values_dict.items():
-            if st.session_state['height'] <= threshold:
-                current_healthy_weight_median = details['median']
-                break
-        st.session_state["healthy_weight_median"] = current_healthy_weight_median
-
-    if ["required_weight_change"] in st.session_state:
-        current_required_weight_change = st.session_state["required_weight_change"]
-
-    else:
-        current_required_weight_change = st.session_state['weight']-current_healthy_weight_median
-        st.session_state["required_weight_change"] = current_required_weight_change
-
-    if ["required_min_weight_change"] in st.session_state:
-        current_required_min_weight_change = st.session_state["required_min_weight_change"]
-
-    else:
-        current_required_min_weight_change = st.session_state['weight']-max(st.session_state["healthy_weight_range"])
-        st.session_state["required_min_weight_change"] = current_required_min_weight_change
-
-    
-    if ["maintainance_calorific_intake"] in st.session_state:
-        current_maintainance_calorific_intake = st.session_state["maintainance_calorific_intake"]
-
-    else:
-        if st.session_state["gender"] == "Male":
-            current_maintainance_calorific_intake = (66.5 + (13.75 * st.session_state['weight']) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
-
-        else:
-
-            current_maintainance_calorific_intake = (655.1 + (9.56 * st.session_state['weight']) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
-
-        st.session_state["maintainance_calorific_intake"] = current_maintainance_calorific_intake
-
-
-    if ["recommended_calorific_intake"] in st.session_state:
-        current_recommended_calorific_intake = st.session_state["recommended_calorific_intake"]
-
-    else:
-        if st.session_state["gender"] == "Male":
-            current_recommended_calorific_intake = (66.5 + (13.75 * current_healthy_weight_median) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
-
-        else:
-
-            current_recommended_calorific_intake = (655.1 + (9.56 * current_healthy_weight_median) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
-
-        st.session_state["recommended_calorific_intake"] = current_recommended_calorific_intake
-
-    if ["minimum_water_intake_in_litres"] in st.session_state:
-        current_minimum_water_intake_in_litres = st.session_state["minimum_water_intake_in_litres"]
-
-    else:
-        if st.session_state["pregnant"] == "Yes":
-            current_minimum_water_intake_in_litres = 2.5
-        elif st.session_state["breastfeeding"] == "Yes":
-            current_minimum_water_intake_in_litres = 3
-        elif st.session_state["gender"] == "Male" and st.session_state["age"] >= 19:
-            current_minimum_water_intake_in_litres = 3
-        elif st.session_state["gender"] == "Female" and st.session_state["age"] >= 19:
-            current_minimum_water_intake_in_litres = 2
-        elif st.session_state["age"] in range(14, 19):
-            current_minimum_water_intake_in_litres = 2.5
-        elif st.session_state["age"] in range(9, 14):
-            current_minimum_water_intake_in_litres = 2
-        elif st.session_state["age"] in range(4, 9):
-            current_minimum_water_intake_in_litres = 1.2
-        elif st.session_state["age"] in range(1, 4):
-            current_minimum_water_intake_in_litres = 1
-        
-        st.session_state["minimum_water_intake_in_litres"] = current_minimum_water_intake_in_litres
-
-
-    if ["healthy_water_intake_in_litres"] in st.session_state:
-        current_healthy_water_intake_in_litres = st.session_state["healthy_water_intake_in_litres"]
-
-    else:
-        current_healthy_water_intake_in_litres = math.ceil(current_minimum_water_intake_in_litres * 1.15 * 10) / 10
-        st.session_state["healthy_water_intake_in_litres"] = current_healthy_water_intake_in_litres
-
-    
-    if ["recommended_caffeine_intake"] in st.session_state:
-        current_recommended_caffeine_intake = st.session_state["recommended_caffeine_intake"]
-    else:
-        if st.session_state["pregnant"] == "Yes":
-            current_recommended_caffeine_intake = "Not Recommended"
-        else:
-            if st.session_state["breastfeeding"] == "Yes":
-                current_recommended_caffeine_intake = "2 Cups Black Coffee or 2 Cups Black Tea"
+            if current_bmi < 16:
+                current_health_category = raw_sources[0]
+            elif current_bmi < 17:
+                current_health_category = raw_sources[1]
+            elif current_bmi < 18.5:
+                current_health_category = raw_sources[2]
+            elif current_bmi < 25:
+                current_health_category = raw_sources[3]
+            elif current_bmi < 30:
+                current_health_category = raw_sources[4]
+            elif current_bmi < 35:
+                current_health_category = raw_sources[5]
+            elif current_bmi < 40:
+                current_health_category = raw_sources[6]
             else:
-                current_recommended_caffeine_intake = "4 Cups Black Coffee or 4 Cups Black Tea"
-       
-        st.session_state["recommended_caffeine_intake"] = current_recommended_caffeine_intake
+                current_health_category = raw_sources[7]
+            
+            st.session_state["health_category"] = current_health_category
+
+        if ["healthy_weight_range"] in st.session_state:
+            current_healthy_weight_range = st.session_state["healthy_weight_range"]
+
+        else:
+            # Your height for comparison
+
+            # Loop through the dictionary to find the matching range and median based on your height
+            for threshold, details in thresholds_values_dict.items():
+                if st.session_state['height'] <= threshold:
+                    current_healthy_weight_range = details['range']
+                    break
+            st.session_state["healthy_weight_range"] = current_healthy_weight_range
+
+        if ["weight_change_category"] in st.session_state:
+            current_weight_change_category = st.session_state["weight_change_category"]
+
+        else:
+            if current_bmi <= -500:
+                current_weight_change_category = "Rapid Weight Loss"
+            elif current_bmi <= -250:
+                current_weight_change_category = "Easy Weight Loss"
+            elif current_bmi <= -100:
+                current_weight_change_category = "Slow Weight Loss"
+            elif current_bmi == 0:
+                current_weight_change_category = "Maintains Weight"
+            elif current_bmi <= 100:
+                current_weight_change_category = "Slow Weight Gain"
+            elif current_bmi <= 250:
+                current_weight_change_category = "Easy Weight Gain"
+            else:
+                current_weight_change_category = "Rapid Weight Gain"
+        
+        st.session_state["weight_change_category"] = current_weight_change_category
 
 
-    if ["daily_protein_requirement_in_gms"] in st.session_state:
-        current_daily_protein_requirement_in_gms = st.session_state["daily_protein_requirement_in_gms"]
+        if ["healthy_weight_median"] in st.session_state:
+            current_healthy_weight_median = st.session_state["healthy_weight_median"]
 
-    else:
-        current_daily_protein_requirement_in_gms = st.session_state["diet_observation_values"] * st.session_state['weight']
-        st.session_state["daily_protein_requirement_in_gms"] = current_daily_protein_requirement_in_gms
+        else:
+            # Your height for comparison
+
+            # Loop through the dictionary to find the matching range and median based on your height
+            for threshold, details in thresholds_values_dict.items():
+                if st.session_state['height'] <= threshold:
+                    current_healthy_weight_median = details['median']
+                    break
+            st.session_state["healthy_weight_median"] = current_healthy_weight_median
+
+        if ["required_weight_change"] in st.session_state:
+            current_required_weight_change = st.session_state["required_weight_change"]
+
+        else:
+            current_required_weight_change = st.session_state['weight']-current_healthy_weight_median
+            st.session_state["required_weight_change"] = current_required_weight_change
+
+        if ["required_min_weight_change"] in st.session_state:
+            current_required_min_weight_change = st.session_state["required_min_weight_change"]
+
+        else:
+            current_required_min_weight_change = st.session_state['weight']-max(st.session_state["healthy_weight_range"])
+            st.session_state["required_min_weight_change"] = current_required_min_weight_change
+
+        
+        if ["maintainance_calorific_intake"] in st.session_state:
+            current_maintainance_calorific_intake = st.session_state["maintainance_calorific_intake"]
+
+        else:
+            if st.session_state["gender"] == "Male":
+                current_maintainance_calorific_intake = (66.5 + (13.75 * st.session_state['weight']) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
+
+            else:
+
+                current_maintainance_calorific_intake = (655.1 + (9.56 * st.session_state['weight']) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
+
+            st.session_state["maintainance_calorific_intake"] = current_maintainance_calorific_intake
+
+
+        if ["recommended_calorific_intake"] in st.session_state:
+            current_recommended_calorific_intake = st.session_state["recommended_calorific_intake"]
+
+        else:
+            if st.session_state["gender"] == "Male":
+                current_recommended_calorific_intake = (66.5 + (13.75 * current_healthy_weight_median) + (5 * st.session_state['height']) - (6.76 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
+
+            else:
+
+                current_recommended_calorific_intake = (655.1 + (9.56 * current_healthy_weight_median) + (1.85 * st.session_state['height']) - (4.7 * st.session_state["age"])) * st.session_state["lifeStyle_value"]
+
+            st.session_state["recommended_calorific_intake"] = current_recommended_calorific_intake
+
+        if ["minimum_water_intake_in_litres"] in st.session_state:
+            current_minimum_water_intake_in_litres = st.session_state["minimum_water_intake_in_litres"]
+
+        else:
+            if st.session_state["pregnant"] == "Yes":
+                current_minimum_water_intake_in_litres = 2.5
+            elif st.session_state["breastfeeding"] == "Yes":
+                current_minimum_water_intake_in_litres = 3
+            elif st.session_state["gender"] == "Male" and st.session_state["age"] >= 19:
+                current_minimum_water_intake_in_litres = 3
+            elif st.session_state["gender"] == "Female" and st.session_state["age"] >= 19:
+                current_minimum_water_intake_in_litres = 2
+            elif st.session_state["age"] in range(14, 19):
+                current_minimum_water_intake_in_litres = 2.5
+            elif st.session_state["age"] in range(9, 14):
+                current_minimum_water_intake_in_litres = 2
+            elif st.session_state["age"] in range(4, 9):
+                current_minimum_water_intake_in_litres = 1.2
+            elif st.session_state["age"] in range(1, 4):
+                current_minimum_water_intake_in_litres = 1
+            
+            st.session_state["minimum_water_intake_in_litres"] = current_minimum_water_intake_in_litres
+
+
+        if ["healthy_water_intake_in_litres"] in st.session_state:
+            current_healthy_water_intake_in_litres = st.session_state["healthy_water_intake_in_litres"]
+
+        else:
+            current_healthy_water_intake_in_litres = math.ceil(current_minimum_water_intake_in_litres * 1.15 * 10) / 10
+            st.session_state["healthy_water_intake_in_litres"] = current_healthy_water_intake_in_litres
+
+        
+        if ["recommended_caffeine_intake"] in st.session_state:
+            current_recommended_caffeine_intake = st.session_state["recommended_caffeine_intake"]
+        else:
+            if st.session_state["pregnant"] == "Yes":
+                current_recommended_caffeine_intake = "Not Recommended"
+            else:
+                if st.session_state["breastfeeding"] == "Yes":
+                    current_recommended_caffeine_intake = "2 Cups Black Coffee or 2 Cups Black Tea"
+                else:
+                    current_recommended_caffeine_intake = "4 Cups Black Coffee or 4 Cups Black Tea"
+        
+            st.session_state["recommended_caffeine_intake"] = current_recommended_caffeine_intake
+
+
+        if ["daily_protein_requirement_in_gms"] in st.session_state:
+            current_daily_protein_requirement_in_gms = st.session_state["daily_protein_requirement_in_gms"]
+
+        else:
+            current_daily_protein_requirement_in_gms = st.session_state["diet_observation_values"] * st.session_state['weight']
+            st.session_state["daily_protein_requirement_in_gms"] = current_daily_protein_requirement_in_gms
 
 
 
@@ -206,21 +206,21 @@ def app():
 
 
 
-    
+        
 
 
-    
+        
+                
+
             
 
+
+
         
 
 
 
     
-
-
-
-    try:
         st.write(f"Yo {st.session_state['name']} , drumroll please... Presenting the one, the only, your epic Health Profile! ")
 
         col1 ,col2 = st.columns(2,gap="large")
