@@ -220,26 +220,30 @@ def app():
 
 
 
+    try:
 
-    col1 ,col2 = st.columns(2,gap="large")
+        col1 ,col2 = st.columns(2,gap="large")
 
-    col1.header("Summary - Health Status")
-    col1.write(f"Your BMI is {int(current_bmi)}")
-    col1.write(f"Your BMI Prime is {int(st.session_state['bmi_prime'])}")
-    col1.write(f"Your Health Category according to BankaiFit is {current_health_category}")
-    col1.write(f"Your Ideal weight Range in KG {current_healthy_weight_range}")
-    col1.write(f"Your Body is currently in Tendency of {current_weight_change_category}")
+        col1.header("Summary - Health Status")
+        col1.write(f"Your BMI is {int(current_bmi)}")
+        col1.write(f"Your BMI Prime is {int(st.session_state['bmi_prime'])}")
+        col1.write(f"Your Health Category according to BankaiFit is {current_health_category}")
+        col1.write(f"Your Ideal weight Range in KG {current_healthy_weight_range}")
+        col1.write(f"Your Body is currently in Tendency of {current_weight_change_category}")
 
-    col2.header("Summary - North Star")
-    col2.write(f"Your Ideal weight should be {round(current_healthy_weight_median,1)} KG")
-    col2.write(f"Required weight Change {round(current_required_weight_change,1)} KG")
-    col2.write(f"Required minimum weight Change {round(current_required_min_weight_change,1)} KG")
-    col2.write(f"Your Maintenance Calorific Intake is {round(current_maintainance_calorific_intake,1)} KG")
-    col2.write(f"Your Recommended Calorific Intake {round(current_recommended_calorific_intake,1)}")
-    col2.write(f"Your Minimum Water Intake In Litres {current_minimum_water_intake_in_litres}")
-    col2.write(f"Your healthy Water Intake in Litres {current_healthy_water_intake_in_litres}")
-    col2.write(f"Your Recommended Caffeine Intake is - {current_recommended_caffeine_intake}")
-    col2.write(f"Your Daily Protein Requirement in gms is {current_daily_protein_requirement_in_gms}")
+        col2.header("Summary - North Star")
+        col2.write(f"Your Ideal weight should be {round(current_healthy_weight_median,1)} KG")
+        col2.write(f"Required weight Change {round(current_required_weight_change,1)} KG")
+        col2.write(f"Required minimum weight Change {round(current_required_min_weight_change,1)} KG")
+        col2.write(f"Your Maintenance Calorific Intake is {round(current_maintainance_calorific_intake,1)} KG")
+        col2.write(f"Your Recommended Calorific Intake {round(current_recommended_calorific_intake,1)}")
+        col2.write(f"Your Minimum Water Intake In Litres {current_minimum_water_intake_in_litres}")
+        col2.write(f"Your healthy Water Intake in Litres {current_healthy_water_intake_in_litres}")
+        col2.write(f"Your Recommended Caffeine Intake is - {current_recommended_caffeine_intake}")
+        col2.write(f"Your Daily Protein Requirement in gms is {current_daily_protein_requirement_in_gms}")
+
+    except:
+        st.write("Well! You need to finish Giving Us Input","Go Back to Profile Settings and Procvide Us required Input")
 
 
 
