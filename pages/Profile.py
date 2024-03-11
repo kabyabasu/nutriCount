@@ -221,6 +221,7 @@ def app():
 
 
     try:
+        st.write(f"Yo {session_state["name"]} , drumroll please... 🥁 Presenting the one, the only, your epic Health Profile! ")
 
         col1 ,col2 = st.columns(2,gap="large")
 
