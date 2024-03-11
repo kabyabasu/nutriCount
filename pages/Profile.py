@@ -221,24 +221,24 @@ def app():
 
 
 
-    
-    st.markdown("#Summary Health Status")
-    st.write("Your BMI is ",int(current_bmi))
-    st.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
-    st.write("Your Health Category according to BankaiFit is ", current_health_category)
-    st.write("Your Ideal weight Range in KG",current_healthy_weight_range)
-    st.write("Your Body is currently in Tendency of ",current_weight_change_category)
+    col1 ,col2 = st.columns(2)
+    col1.markdown("#Summary Health Status")
+    col1.write("Your BMI is ",int(current_bmi))
+    col1.write("Your BMI Prime is ",int(st.session_state["bmi_prime"]))
+    col1.write("Your Health Category according to BankaiFit is ", current_health_category)
+    col1.write("Your Ideal weight Range in KG",current_healthy_weight_range)
+    col1.write("Your Body is currently in Tendency of ",current_weight_change_category)
 
-    st.markdown("#North Star")
-    st.write("Your Ideal weight should be (in KG)",current_healthy_weight_median)
-    st.write("Required weight Change",current_required_weight_change)
-    st.write("Required minimum weight Change",current_required_min_weight_change)
-    st.write("Your Maintainance Calorific Intake is ", current_maintainance_calorific_intake)
-    st.write("Your Recommended Calorific Intake",current_recommended_calorific_intake)
-    st.write("Your Minimum Water Intake In Litres", current_minimum_water_intake_in_litres)
-    st.write("Your healthy Water Intake in Litres",current_healthy_water_intake_in_litres)
-    st.write("Your Recommended Caffeine Intake is - ", current_recommended_caffeine_intake)
-    st.write("Your Daily Protein Requirement in gms is - ",current_daily_protein_requirement_in_gms)
+    col2.markdown("#North Star")
+    col2.write("Your Ideal weight should be (in KG)",current_healthy_weight_median)
+    col2.write("Required weight Change",current_required_weight_change)
+    col2.write("Required minimum weight Change",current_required_min_weight_change)
+    col2.write("Your Maintainance Calorific Intake is ", current_maintainance_calorific_intake)
+    col2.write("Your Recommended Calorific Intake",current_recommended_calorific_intake)
+    col2.write("Your Minimum Water Intake In Litres", current_minimum_water_intake_in_litres)
+    col2.write("Your healthy Water Intake in Litres",current_healthy_water_intake_in_litres)
+    col2.write("Your Recommended Caffeine Intake is - ", current_recommended_caffeine_intake)
+    col2.write("Your Daily Protein Requirement in gms is ",current_daily_protein_requirement_in_gms)
 
 
 
