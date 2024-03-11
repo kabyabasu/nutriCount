@@ -223,6 +223,7 @@ def app():
 
     col1 ,col2 = st.columns(2,gap="large")
 
+    col1.header("A cat")
     col1.write(f"Your BMI is {int(current_bmi)}")
     col1.write(f"Your BMI Prime is {int(st.session_state['bmi_prime'])}")
     col1.write(f"Your Health Category according to BankaiFit is {current_health_category}")
