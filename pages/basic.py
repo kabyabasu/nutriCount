@@ -92,7 +92,7 @@
 # st.write(f"Your current weight is: {st.session_state.weight} kg")
 
 import streamlit as st
-
+from streamlit_extras.switch_page_button import switch_page
 
 # @st.cache_data
 def wt():
@@ -172,6 +172,8 @@ def wt():
         if submitted:
             st.write("Thanks for Submitting Basic Infomration")
             st.write("Please move to Diet and Eating Habits Section and provide information")
+            switch_page("Diet and Eating Habits")
+
 
 
 
