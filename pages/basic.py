@@ -168,7 +168,12 @@ def wt():
             current_breastfeeding = st.selectbox("Are You Breastfeeding", ["No", "Yes"])
             st.session_state["breastfeeding"] = current_breastfeeding
 
-        st.form_submit_button("Submit To BankaiFit")
+        submitted = st.form_submit_button("Submit To BankaiFit")
+        if submitted:
+            st.write("Thanks for Submitting Basic Infomration")
+            st.write("Please move to Diet and Eating Habits Section and provide information")
+
+
 
     # if ["heigh"] in st.session_state:
 
